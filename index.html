@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Signal — Immersive Weekly Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0b0b10;
+    --surface: #13131b;
+    --card: #171722;
+    --card-hi: #1d1d2b;
+    --ink: #ececf2;
+    --muted: #9b9baa;
+    --border: #262633;
+    --blue: #5b8cff;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --grad: linear-gradient(100deg, #7c6cff 0%, #00c2ff 50%, #ff5c8a 100%);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ===== reveal animation ===== */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ===== hero ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 96px 24px 72px;
+    text-align: center;
+    background: radial-gradient(1200px 600px at 50% -10%, #1a1a2e 0%, var(--bg) 60%);
+  }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .5; mix-blend-mode: screen; }
+  .blob.b1 { width: 420px; height: 420px; background: #4f46e5; top: -140px; left: 8%; animation: drift 16s ease-in-out infinite alternate; }
+  .blob.b2 { width: 360px; height: 360px; background: #0891b2; top: -80px; right: 6%; animation: drift 20s ease-in-out infinite alternate-reverse; }
+  .blob.b3 { width: 300px; height: 300px; background: #e11d48; bottom: -140px; left: 40%; opacity: .3; animation: drift 24s ease-in-out infinite alternate; }
+  @keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(50px, 40px) scale(1.15); } }
+  .grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 75%);
+  }
+  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 600 11px/1 'JetBrains Mono', monospace; letter-spacing: .14em;
+    text-transform: uppercase; color: #c8c8f0;
+    border: 1px solid rgba(255,255,255,.14); border-radius: 999px;
+    padding: 8px 14px; background: rgba(255,255,255,.04);
+    margin-bottom: 26px;
+  }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--grad); box-shadow: 0 0 12px #00c2ff; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: clamp(40px, 7vw, 72px); line-height: 1.02; letter-spacing: -.03em;
+    margin-bottom: 24px;
+  }
+  .hero h1 .grad {
+    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    background-size: 200% 100%; animation: shine 5s linear infinite;
+  }
+  @keyframes shine { to { background-position: 200% 0; } }
+  .hero .lede {
+    font-size: 17px; color: #c3c3d2; max-width: 640px; margin: 0 auto 34px;
+  }
+  .stats {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 10px;
+  }
+  .stat {
+    background: rgba(255,255,255,.05); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 16px; text-align: left;
+    backdrop-filter: blur(4px);
+  }
+  .stat .n { font: 700 22px/1 'Space Grotesk', sans-serif; }
+  .stat .n.g1 { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat .l { font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: .02em; }
+
+  /* ===== ticker ===== */
+  .ticker {
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    background: var(--surface); overflow: hidden; white-space: nowrap;
+  }
+  .ticker-track { display: inline-block; padding: 12px 0; animation: marquee 28s linear infinite; }
+  .ticker-track span {
+    font: 600 12px/1 'JetBrains Mono', monospace; letter-spacing: .12em; text-transform: uppercase;
+    color: #a8a8b8; margin: 0 26px;
+  }
+  .ticker-track i { font-style: normal; color: #3a3a4c; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ===== body ===== */
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 20px 40px; }
+
+  .section { margin-bottom: 60px; }
+  .shead {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+  }
+  .shead .num {
+    font: 700 13px/1 'JetBrains Mono', monospace;
+    width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center;
+    color: #0b0b10; flex: none;
+  }
+  .shead h2 { font: 700 20px/1 'Space Grotesk', sans-serif; letter-spacing: -.01em; }
+  .shead .rule { flex: 1; height: 1px; background: var(--border); }
+
+  .card {
+    position: relative; display: flex; gap: 16px; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 20px; margin-bottom: 14px;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+    overflow: hidden;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--accent, var(--grad)); opacity: 0; transition: opacity .25s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px); background: var(--card-hi);
+    border-color: rgba(255,255,255,.16);
+    box-shadow: 0 18px 40px -20px rgba(0,0,0,.7);
+  }
+  .card:hover::before { opacity: 1; }
+
+  .thumb {
+    flex: none; width: 42px; height: 42px; border-radius: 11px;
+    background: #23232f; border: 1px solid var(--border);
+    display: grid; place-items: center; overflow: hidden;
+  }
+  .thumb img { width: 26px; height: 26px; object-fit: contain; }
+  .thumb .emoji { font-size: 20px; }
+  .card-body { flex: 1; min-width: 0; }
+  .card-body h3 { font-size: 16px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 5px; }
+  .card-body p { font-size: 13.5px; color: #b7b7c6; }
+  .read {
+    display: inline-flex; align-items: center; gap: 5px;
+    font: 600 12px/1 'Inter', sans-serif; color: var(--accent, #8ab4ff);
+    margin-top: 10px; position: relative;
+  }
+  .read::after {
+    content: ""; position: absolute; left: 0; bottom: -3px; height: 1px; width: 0;
+    background: currentColor; transition: width .25s ease;
+  }
+  .card:hover .read::after { width: 100%; }
+  .read svg { transition: transform .25s ease; }
+  .card:hover .read svg { transform: translate(2px, -2px); }
+
+  .tag {
+    font: 600 10px/1 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 6px; margin-bottom: 10px; display: inline-block;
+  }
+
+  /* worth watching */
+  .watch { display: grid; gap: 14px; }
+  .watch .card { border-style: dashed; }
+  .watch .card:hover { border-style: solid; }
+
+  /* ===== footer ===== */
+  .footer {
+    border-top: 1px solid var(--border); background: var(--surface);
+    padding: 48px 20px 64px; text-align: center;
+  }
+  .footer .brand { font: 700 22px/1 'Space Grotesk', sans-serif; margin-bottom: 8px; }
+  .footer .brand em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .footer .sub { color: var(--muted); font-size: 13px; margin-bottom: 26px; }
+  .sub-btn {
+    display: inline-block; background: var(--grad); color: #0b0b10;
+    font: 700 14px/1 'Inter', sans-serif; padding: 13px 28px; border-radius: 999px;
+    transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 10px 30px -10px rgba(0,194,255,.5);
+  }
+  .sub-btn:hover { transform: translateY(-2px); }
+  .sources { margin-top: 34px; font: 500 11px/1.5 'JetBrains Mono', monospace; color: #6f6f80; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .sources a { color: #8a8ab8; border-bottom: 1px dotted #3a3a4c; }
+  .sources a:hover { color: #bdbdf0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+  @media (max-width: 560px) {
+    .card { flex-direction: column; }
+    .hero { padding: 72px 20px 56px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span> Weekly Briefing · Week of Aug 31, 2026 · Issue 012</div>
+    <h1>Agents go mainstream.<br><span class="grad">The attack surface follows.</span></h1>
+    <p class="lede">The agentic transition moved from early adoption to the default — and the consequences showed up everywhere. This week: a wave of agent-specific CVEs, universities betting on AI literacy, and ChatGPT's new EU designation.</p>
+    <div class="stats">
+      <div class="stat"><div class="n g1">90%</div><div class="l">devs use agents weekly</div></div>
+      <div class="stat"><div class="n">2,500+</div><div class="l">orgs in LiteLLM breach</div></div>
+      <div class="stat"><div class="n">CVSS 8.1</div><div class="l">NemoClaw poisoning</div></div>
+      <div class="stat"><div class="n">57%</div><div class="l">orgs run agents in prod</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Agentic SWE <i>·</i></span><span>Prompt Injection <i>·</i></span><span>EU AI Act <i>·</i></span><span>AI Literacy <i>·</i></span><span>Supply-Chain Security <i>·</i></span><span>Claude Code <i>·</i></span><span>Model Poisoning <i>·</i></span><span>AI in Higher Ed <i>·</i></span>
+    <span>Agentic SWE <i>·</i></span><span>Prompt Injection <i>·</i></span><span>EU AI Act <i>·</i></span><span>AI Literacy <i>·</i></span><span>Supply-Chain Security <i>·</i></span><span>Claude Code <i>·</i></span><span>Model Poisoning <i>·</i></span><span>AI in Higher Ed <i>·</i></span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- AI TRENDS -->
+  <div class="section reveal">
+    <div class="shead"><div class="num" style="background:var(--blue)">01</div><h2>AI Trends</h2><div class="rule"></div></div>
+
+    <div class="card" style="--accent:var(--blue)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=techcrunch.com&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>🏛️</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(91,140,255,.14);color:var(--blue)">Defense · Models</span>
+        <h3>The Pentagon deploys its own ChatGPT and Grok</h3>
+        <p>"ChatGPT Mil" and "Grok for Government" roll out to 3M personnel on GenAI.mil; Anthropic's Claude stays out amid its supply-chain court fight.</p>
+        <a class="read" href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--blue)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=techcrunch.com&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>🤖</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(91,140,255,.14);color:var(--blue)">M&A · Open Source</span>
+        <h3>Nvidia closes in on acquiring Hugging Face</h3>
+        <p>A reported acquisition would consolidate key developer infrastructure under a major chipmaker — and test the open-source community.</p>
+        <a class="read" href="https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--blue)">
+      <div class="thumb"><span class="emoji">⚖️</span></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(91,140,255,.14);color:var(--blue)">Regulation</span>
+        <h3>ChatGPT is the EU's first AI "very large online search engine"</h3>
+        <p>The DSA designation (159M monthly EU users) brings oversight and fines of up to 6% of global turnover; first risk assessments due late November.</p>
+        <a class="read" href="https://thenextweb.com/news/hatgpt-reddit-roblox-dsa-designation" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section reveal">
+    <div class="shead"><div class="num" style="background:var(--green)">02</div><h2>AI in Education</h2><div class="rule"></div></div>
+
+    <div class="card" style="--accent:var(--green)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=nus.edu.sg&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>🎓</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(52,211,153,.14);color:var(--green)">Policy</span>
+        <h3>Universities mandate AI literacy instead of banning it</h3>
+        <p>Tampa requires a one-credit AI literacy course for all sophomores; NUS makes applied GenAI compulsory for every first-year — judgment and verification are the core skill.</p>
+        <a class="read" href="https://news.nus.edu.sg/fostering-an-ai-fluent-generation-nus-equips-students-to-use-ai-well/" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--green)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=dailycal.org&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>💻</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(52,211,153,.14);color:var(--green)">Curriculum</span>
+        <h3>Berkeley's CS 61A adds an AI coding-agent project</h3>
+        <p>The intro course moves from Scheme to Gleam, with checkoffs and a campus AI tutor to verify students still understand their own work.</p>
+        <a class="read" href="https://www.dailycal.org/news/campus/academics/uc-berkeley-shakes-up-introductory-cs-course-by-implementing-ai-assisted-project/article_77e51e53-80ae-4e7e-8999-2a2111fd2106.html" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--green)">
+      <div class="thumb"><span class="emoji">🧭</span></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(52,211,153,.14);color:var(--green)">Pedagogy</span>
+        <h3>CMU &amp; Johns Hopkins: "don't let AI think for you"</h3>
+        <p>CMU's GAITAR fellowship and "Effective Coding With AI" stress critical thinking; Johns Hopkins launches an 18-week Agentic AI certificate.</p>
+        <a class="read" href="https://www.cmu.edu/news/stories/archives/2026/august/navigating-the-ai-era-with-a-cmu-focus-on-critical-thinking" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AGENTIC SWE -->
+  <div class="section reveal">
+    <div class="shead"><div class="num" style="background:var(--amber)">03</div><h2>Agentic Software Engineering</h2><div class="rule"></div></div>
+
+    <div class="card" style="--accent:var(--amber)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=jetbrains.com&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>📊</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(251,191,36,.14);color:var(--amber)">Adoption</span>
+        <h3>Agent adoption hits the mainstream: 90% weekly, 68% daily</h3>
+        <p>JetBrains' survey of 15,000+ developers shows Claude Code (39%) nearly doubling GitHub Copilot (21%), with Codex up ~5× to 16%.</p>
+        <a class="read" href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/" target="_blank" rel="noopener">Read the report <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--amber)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=langchain.com&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>🏭</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(251,191,36,.14);color:var(--amber)">Production</span>
+        <h3>57% of organizations now run agents in production</h3>
+        <p>LangChain reports quality as the top barrier, observability near-universal at 89% versus 52% for evals, and security the #2 enterprise concern.</p>
+        <a class="read" href="https://www.langchain.com/state-of-agent-engineering" target="_blank" rel="noopener">Read the report <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--amber)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=devops.com&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>🧩</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(251,191,36,.14);color:var(--amber)">DevOps</span>
+        <h3>Context engineering, not more intelligence, is the unlock</h3>
+        <p>Agents already write 50–60% of code on some teams; structured context across the SDLC is what lets them meet DevOps-grade precision.</p>
+        <a class="read" href="https://devops.com/context-engineering-is-the-key-to-unlocking-ai-agents-in-devops" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECURITY -->
+  <div class="section reveal">
+    <div class="shead"><div class="num" style="background:var(--red)">04</div><h2>AI Coding Security</h2><div class="rule"></div></div>
+
+    <div class="card" style="--accent:var(--red)">
+      <div class="thumb"><span class="emoji">🛡️</span></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(248,113,113,.14);color:var(--red)">CVE · Agent IDE</span>
+        <h3>Prompt injection graduates from theory to shipped CVEs</h3>
+        <p>Amazon's Kiro IDE exfiltrates data via a crafted workspace file; NVIDIA's NemoClaw (CVE-2026-65105, CVSS 8.1) poisons a local Ollama model.</p>
+        <a class="read" href="https://thecybersignal.com/oasis-security-nvidia-nemoclaw-ollama-model-poisoning-2026" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--red)">
+      <div class="thumb"><img src="https://www.google.com/s2/favicons?domain=cloudsek.com&sz=64" alt="" onerror="this.parentNode.innerHTML='<span class=emoji>🔗</span>'"></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(248,113,113,.14);color:var(--red)">Supply Chain</span>
+        <h3>A LiteLLM supply-chain breach exposed 2,500+ organizations</h3>
+        <p>A backdoored model-routing proxy leaked 153GB of stolen credentials and flagged 434,000 CI/CD pipelines.</p>
+        <a class="read" href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card" style="--accent:var(--red)">
+      <div class="thumb"><span class="emoji">🔐</span></div>
+      <div class="card-body">
+        <span class="tag" style="background:rgba(248,113,113,.14);color:var(--red)">Config Injection</span>
+        <h3>Claude Code &amp; Grok each leak via configuration injection</h3>
+        <p>Claude Code's <code>.claude/settings.json</code> hook enables RCE and API-key theft; Grok's "Cryptographic Context Injection" still exposes chat history.</p>
+        <a class="read" href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">Read the story <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORTH WATCHING -->
+  <div class="section reveal">
+    <div class="shead"><div class="num" style="background:linear-gradient(100deg,#7c6cff,#00c2ff)">05</div><h2>Worth Watching</h2><div class="rule"></div></div>
+    <div class="watch">
+      <div class="card" style="--accent:#7c6cff">
+        <div class="thumb"><span class="emoji">🔭</span></div>
+        <div class="card-body"><h3>How fast agent-tooling vendors close prompt-injection holes</h3><p>Whether xAI patches Grok with a CVE, and whether NVIDIA ships its Windows/WSL fix before the poisoning pattern spreads.</p></div>
+      </div>
+      <div class="card" style="--accent:#00c2ff">
+        <div class="thumb"><span class="emoji">🤝</span></div>
+        <div class="card-body"><h3>The Nvidia–Hugging Face deal</h3><p>Whether it closes, and how regulators and the open-source community respond to a chipmaker owning key developer infrastructure.</p></div>
+      </div>
+      <div class="card" style="--accent:#ff5c8a">
+        <div class="thumb"><span class="emoji">📅</span></div>
+        <div class="card-body"><h3>OpenAI's EU DSA compliance window</h3><p>First risk assessments under ChatGPT's new designation are due late November, with fines up to 6% of global turnover.</p></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="brand">The <em>Signal</em></div>
+  <p class="sub">A weekly briefing on AI trends, education, agentic engineering, and coding security.<br>Compiled from this week's Scout briefings.</p>
+  <a class="sub-btn" href="#">Subscribe →</a>
+  <div class="sources">
+    Sources: <a href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/">TechCrunch</a> ·
+    <a href="https://news.nus.edu.sg/fostering-an-ai-fluent-generation-nus-equips-students-to-use-ai-well/">NUS</a> ·
+    <a href="https://www.govtech.com/education/higher-ed/university-of-tampa-mandates-ai-literacy-class-for-sophomores">GovTech</a> ·
+    <a href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/">JetBrains</a> ·
+    <a href="https://www.langchain.com/state-of-agent-engineering">LangChain</a> ·
+    <a href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines">CloudSEK</a> ·
+    <a href="https://www.cmu.edu/news/stories/archives/2026/august/navigating-the-ai-era-with-a-cmu-focus-on-critical-thinking">CMU</a> ·
+    <a href="https://thecybersignal.com/oasis-security-nvidia-nemoclaw-ollama-model-poisoning-2026">CyberSignal</a> ·
+    <a href="https://blog.cyberdesserts.com/ai-agent-security-risks/">Cyberdesserts</a>
+  </div>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const items = e.target.classList.contains('section') ? e.target.querySelectorAll('.card, .shead') : [e.target];
+        items.forEach((el, i) => setTimeout(() => el.classList.add('in'), i * 90));
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
