@@ -79,7 +79,7 @@
   }
   .mast .meta b { color: var(--ink); }
   .stamp {
-    position: absolute; top: 14px; right: 150px;
+    align-self: flex-start; margin-top: 4px;
     font-family: "Courier New", monospace; font-size: 10px; letter-spacing: .18em;
     color: var(--red); border: 1.5px solid var(--red); border-radius: 3px;
     padding: 4px 8px;
@@ -243,15 +243,14 @@
     .thumb { width: 100%; aspect-ratio: 16 / 9; }
     .mast { flex-direction: column; align-items: flex-start; }
     .mast .meta { text-align: left; }
-    .stamp { right: 14px; }
   }
 </style>
 </head>
 <body>
 
 <div class="mast">
-  <div class="stamp">MEMBERS · WEEKLY</div>
   <div class="brand">The Signal<span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+  <div class="stamp">MEMBERS · WEEKLY</div>
   <div class="meta mono">
     <b>Issue 012</b> · Week of 31.08.2026<br>
     Trends · Education · Agentic · Security
