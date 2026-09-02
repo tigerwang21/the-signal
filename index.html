@@ -1,280 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Signal — Executive Member Portal</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Signal — From Adoption to Governance</title>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="The Signal — From Adoption to Governance"/>
 <meta property="og:description" content="A weekly AI strategy briefing for higher-education leadership, built end-to-end by Hermes agent bots."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-tint": "#c8c6c7", "on-error-container": "#ffdad6", "error": "#ffb4ab",
+          "on-tertiary-fixed-variant": "#5700c9", "surface": "#131317", "secondary-container": "#00e3fd",
+          "surface-container-high": "#2a2a2e", "surface-bright": "#39393d", "outline": "#919094",
+          "inverse-primary": "#5f5e5f", "primary": "#c8c6c7", "on-surface": "#e4e1e7",
+          "secondary-fixed-dim": "#00daf3", "surface-container-highest": "#353439", "outline-variant": "#46464a",
+          "tertiary-container": "#0f002f", "primary-container": "#0a0a0b", "tertiary-fixed-dim": "#d1bcff",
+          "inverse-surface": "#e4e1e7", "surface-container-low": "#1b1b1f", "secondary-fixed": "#9cf0ff",
+          "secondary": "#bdf4ff", "on-secondary-fixed": "#001f24", "tertiary": "#d1bcff", "on-error": "#690005",
+          "error-container": "#93000a", "on-tertiary": "#3c0090", "surface-dim": "#131317",
+          "inverse-on-surface": "#303034", "background": "#131317", "tertiary-fixed": "#e9ddff",
+          "surface-variant": "#353439", "surface-container": "#1f1f23", "on-secondary-fixed-variant": "#004f58",
+          "on-tertiary-fixed": "#23005b", "on-background": "#e4e1e7", "on-secondary": "#00363d",
+          "surface-container-lowest": "#0e0e12", "on-primary-fixed-variant": "#474647", "on-secondary-container": "#00616d",
+          "on-primary-fixed": "#1c1b1c", "primary-fixed-dim": "#c8c6c7", "on-primary-container": "#7a797a",
+          "primary-fixed": "#e5e2e3", "on-tertiary-container": "#8b55ff", "on-surface-variant": "#c7c6ca", "on-primary": "#313031"
+        },
+        "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        "spacing": {
+          "stack-lg": "32px", "container-max": "1280px", "stack-sm": "8px", "unit": "4px",
+          "gutter": "24px", "margin-desktop": "40px", "stack-md": "16px", "margin-mobile": "16px"
+        },
+        "fontFamily": {
+          "body-md": ["geist"], "headline-md": ["manrope"], "headline-sm": ["manrope"],
+          "label-mono": ["geist"], "display-lg": ["manrope"], "data-point": ["geist"], "body-lg": ["geist"]
+        },
+        "fontSize": {
+          "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+          "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+          "label-mono": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+          "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "data-point": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+        }
+      }
+    }
+  }
+</script>
 <style>
-  :root{
-    --bg:#0a0a0b;--surface:#131317;--surface-low:#1b1b1f;--surface-container:#1f1f23;--surface-high:#2a2a2e;--surface-lowest:#0e0e12;
-    --primary:#c8c6c7;--on-bg:#e4e1e7;--on-variant:#c7c6ca;--outline:#919094;--outline-variant:#46464a;
-    --cyan:#00e3fd;--cyan-soft:#bdf4ff;--purple:#d1bcff;--purple-deep:#7000ff;
-    --font-display:'Manrope',sans-serif;--font-body:'Geist',sans-serif;
-    --sidebar:240px;
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .tech-grid {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--on-bg);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  ::selection{background:rgba(0,227,253,.25)}
-
-  /* ambient background */
-  .grid-pattern{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px;animation:gridDrift 26s linear infinite}
-  .glow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.2;background:radial-gradient(circle at 70% 0%,#00e3fd 0%,transparent 60%);animation:breathe 9s ease-in-out infinite}
-  @keyframes gridDrift{from{background-position:0 0}to{background-position:32px 32px}}
-  @keyframes breathe{0%,100%{opacity:.14;transform:scale(1)}50%{opacity:.28;transform:scale(1.05)}}
-
-  /* sidebar */
-  .sidebar{position:fixed;left:0;top:0;width:var(--sidebar);height:100vh;background:rgba(13,13,17,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-right:1px solid var(--outline-variant);z-index:50;display:flex;flex-direction:column;padding:28px 0 20px}
-  .sidebar .logo{padding:0 24px;margin-bottom:28px}
-  .sidebar .logo .word{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--on-bg);display:flex;align-items:center;gap:9px;white-space:nowrap}
-  .sidebar .logo .bars{display:inline-flex;align-items:flex-end;gap:2px;height:20px}
-  .sidebar .logo .bars span{width:4px;background:var(--cyan);border-radius:1px;animation:wave 1.4s ease-in-out infinite}
-  .sidebar .logo .bars span:nth-child(1){height:7px}.sidebar .logo .bars span:nth-child(2){height:15px;animation-delay:.12s}.sidebar .logo .bars span:nth-child(3){height:11px;animation-delay:.24s}.sidebar .logo .bars span:nth-child(4){height:19px;animation-delay:.36s}
-  .sidebar .logo .sub{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--purple);margin-top:4px}
-  @keyframes wave{0%,100%{transform:scaleY(.7);opacity:.55}50%{transform:scaleY(1.15);opacity:1}}
-  .sidebar nav{flex:1;display:flex;flex-direction:column;gap:2px;padding:0 12px;overflow-y:auto}
-  .sidebar nav a{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--on-variant);transition:background .2s,color .2s;border-left:2px solid transparent}
-  .sidebar nav a:hover{background:rgba(255,255,255,.05);color:var(--on-bg)}
-  .sidebar nav a.active{background:rgba(0,227,253,.08);color:var(--cyan);border-left-color:var(--cyan)}
-  .sidebar nav a .ico{font-family:var(--font-display);font-weight:800;font-size:15px;width:20px;text-align:center;flex-shrink:0}
-  .sidebar .divider{height:1px;background:rgba(70,70,74,.4);margin:10px 14px}
-  .sidebar .member{margin:0 24px;margin-top:auto;display:flex;align-items:center;gap:11px;padding-top:16px;border-top:1px solid rgba(70,70,74,.4)}
-  .sidebar .member .avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple-deep));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:14px;color:#0a0a0b}
-  .sidebar .member .who{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-bg)}
-  .sidebar .member .role{font-size:10px;color:var(--on-variant);letter-spacing:.08em;text-transform:uppercase}
-
-  /* top bar */
-  .topbar{position:fixed;top:0;left:var(--sidebar);right:0;height:60px;background:rgba(13,13,17,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(70,70,74,.35);z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 32px}
-  .topbar .crumb{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-variant)}
-  .topbar .crumb b{color:var(--cyan)}
-  .topbar .right{display:flex;align-items:center;gap:18px}
-  .topbar .badge{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,227,253,.3);padding:5px 11px;border-radius:4px;background:rgba(0,227,253,.06)}
-
-  /* main */
-  main{margin-left:var(--sidebar);padding:96px 40px 40px;max-width:1200px;position:relative;z-index:10}
-  .scanline{position:fixed;left:var(--sidebar);right:0;height:2px;top:-4%;background:linear-gradient(90deg,transparent,rgba(0,227,253,.6),transparent);box-shadow:0 0 22px rgba(0,227,253,.4);animation:scan 8s linear infinite;pointer-events:none;z-index:1}
-  @keyframes scan{0%{top:-4%}100%{top:104%}}
-
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--surface-high);border:1px solid rgba(70,70,74,.5);padding:6px 12px;border-radius:4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);animation:rise .7s .1s both}
-  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 1.6s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,227,253,.5)}50%{opacity:.5;box-shadow:0 0 0 6px rgba(0,227,253,0)}}
-  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,4.5vw,46px);line-height:1.08;letter-spacing:-.02em;margin:18px 0 12px;animation:rise .7s .25s both}
-  .hero .lede{font-size:17px;line-height:1.6;color:var(--on-variant);max-width:720px;border-left:2px solid var(--cyan);padding:4px 0 4px 16px;background:linear-gradient(90deg,rgba(27,27,31,.55),transparent);animation:rise .7s .4s both}
-  @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0 40px;animation:rise .7s .55s both}
-  @media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr)}}
-  .stat{position:relative;overflow:hidden;background:rgba(26,26,30,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(70,70,74,.5);border-radius:8px;padding:18px 16px;transition:border-color .3s,transform .3s}
-  .stat:hover{border-color:rgba(0,227,253,.5);transform:translateY(-3px)}
-  .stat .tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
-  .stat .num{font-family:var(--font-display);font-weight:800;font-size:32px;letter-spacing:-.02em;color:var(--cyan);line-height:1;text-shadow:0 0 18px rgba(0,227,253,.35)}
-  .stat .lbl{font-size:12px;color:var(--on-variant);margin-top:8px;line-height:1.4}
-
-  section.block{margin-bottom:44px;scroll-margin-top:90px}
-  .block-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;gap:16px;padding-bottom:12px;border-bottom:1px solid rgba(70,70,74,.3)}
-  .block-head h2{font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
-  .block-head h2 .ico{color:var(--cyan);font-size:20px}
-  .block-head .count{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--outline);white-space:nowrap}
-  .cards{display:grid;grid-template-columns:1fr;gap:14px}
-  @media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
-  @media(min-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}}
-  .card{position:relative;overflow:hidden;background:var(--surface-low);border:1px solid rgba(70,70,74,.5);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:12px;transition:border-color .3s,transform .3s,box-shadow .3s}
-  .card:hover{border-color:rgba(0,227,253,.55);transform:translateY(-3px);box-shadow:0 0 26px rgba(0,227,253,.1),0 10px 28px rgba(0,0,0,.4)}
-  .card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--cyan),transparent);opacity:.35;transition:opacity .3s}
-  .card:hover::before{opacity:1}
-  .card .idx{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
-  .card h3{font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1.35;color:var(--on-bg);transition:color .3s}
-  .card:hover h3{color:var(--cyan-soft)}
-  .card p{font-size:13.5px;color:var(--on-variant);flex-grow:1}
-  .card a.src{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:5px;margin-top:auto}
-  .card a.src .arr{display:inline-block;transition:transform .3s}
-  .card a.src:hover .arr{transform:translateX(4px)}
-
-  .rows{display:flex;flex-direction:column;gap:12px}
-  .rows .row{display:flex;gap:14px;align-items:flex-start;background:var(--surface-low);border:1px solid rgba(70,70,74,.4);border-radius:8px;padding:16px 18px;transition:border-color .3s,transform .3s}
-  .rows .row:hover{border-color:rgba(0,227,253,.45);transform:translateX(4px)}
-  .rows .row .glyph{font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1;flex-shrink:0;color:var(--cyan)}
-  .rows .row p{font-size:14.5px;color:var(--on-variant)}
-  .rows .row p b{color:var(--on-bg);font-weight:600}
-  .rows.watch .row .glyph{color:var(--purple)}
-
-  .video-card{position:relative;overflow:hidden;background:rgba(26,26,30,.55);backdrop-filter:blur(16px);border:1px solid rgba(70,70,74,.5);border-radius:10px;padding:20px;transition:border-color .3s}
-  .video-card:hover{border-color:rgba(0,227,253,.5)}
-  .video-card .vid{aspect-ratio:16/9;border-radius:8px;background:linear-gradient(135deg,#0f0f12,#1b1b1f);border:1px solid rgba(70,70,74,.4);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-  .video-card .vid .play{width:64px;height:64px;border-radius:50%;background:rgba(0,227,253,.15);border:1px solid rgba(0,227,253,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s,background .3s;box-shadow:0 0 20px rgba(0,227,253,.25)}
-  .video-card .vid .play:hover{transform:scale(1.08);background:rgba(0,227,253,.25)}
-  .video-card .vid .play::before{content:'';width:0;height:0;border-left:22px solid var(--cyan);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:5px}
-  .video-card .vid .status{position:absolute;bottom:12px;right:14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-variant);background:rgba(10,10,11,.7);padding:4px 10px;border-radius:4px}
-  .video-card h3{font-family:var(--font-display);font-weight:700;font-size:19px;margin:16px 0 6px}
-  .video-card p{font-size:13.5px;color:var(--on-variant)}
-
-  footer{margin-left:var(--sidebar);padding:30px 40px;border-top:1px solid rgba(70,70,74,.3);position:relative;z-index:10}
-  footer .inner{max-width:1200px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
-  footer .built{font-size:13px;color:var(--on-variant)}
-  footer .built code{font-family:var(--font-body);color:var(--cyan);font-size:12px}
-  footer .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--outline)}
-
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
-  .reveal.in{opacity:1;transform:none}
-
-  @media(max-width:860px){
-    .sidebar{transform:translateX(-100%);transition:transform .3s}
-    .topbar{left:0}
-    main,footer{margin-left:0}
-  }
-  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.grid-pattern,.glow,.scanline{animation:none}}
+  .signal-glow { box-shadow: 0 0 10px 1px rgba(0, 229, 255, 0.1); }
+  .glass-panel { background: rgba(26, 26, 30, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .signal-bar { animation: wave 1.4s ease-in-out infinite; transform-origin: bottom; }
+  .signal-bar:nth-child(2){ animation-delay: .12s } .signal-bar:nth-child(3){ animation-delay: .24s } .signal-bar:nth-child(4){ animation-delay: .36s }
+  @keyframes wave { 0%,100%{ transform: scaleY(.7); opacity:.55 } 50%{ transform: scaleY(1.15); opacity:1 } }
+  .reveal { opacity:0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .signal-bar,.reveal{ animation:none!important; transition:none!important } .reveal{ opacity:1; transform:none } }
 </style>
 </head>
-<body>
-<div class="grid-pattern"></div>
-<div class="glow"></div>
-<div class="scanline"></div>
+<body class="bg-surface text-on-surface font-body-md tech-grid min-h-screen">
+<div class="fixed inset-0 z-0 pointer-events-none opacity-20" style="background: radial-gradient(circle at 50% 0%, #00e3fd 0%, transparent 60%);"></div>
 
-<aside class="sidebar">
-  <div class="logo">
-    <div class="word"><span class="bars"><span></span><span></span><span></span><span></span></span>THE SIGNAL</div>
-    <div class="sub">Executive Portal</div>
-  </div>
-  <nav>
-    <a class="active" href="#brief"><span class="ico">◈</span>Executive Brief</a>
-    <a href="#governance"><span class="ico">⚖</span>AI Strategy &amp; Governance</a>
-    <a href="#teaching"><span class="ico">◆</span>AI in Teaching &amp; Learning</a>
-    <a href="#workforce"><span class="ico">◈</span>AI Workforce &amp; Skills</a>
-    <a href="#policy"><span class="ico">◇</span>AI Policy &amp; Operations</a>
-    <a href="#actions"><span class="ico">▸</span>What This Means</a>
-    <a href="#watching"><span class="ico">◔</span>Worth Watching</a>
-    <div class="divider"></div>
-    <a href="#video"><span class="ico">▶</span>Watch the Briefing</a>
-  </nav>
-  <div class="member">
-    <div class="avatar">TS</div>
-    <div>
-      <div class="who">Member</div>
-      <div class="role">Higher-Ed Leadership</div>
+<!-- Masthead (weekly newsletter) -->
+<header class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg">
+  <div class="flex items-center justify-between flex-wrap gap-stack-md pb-stack-md border-b border-outline-variant/30">
+    <div class="flex items-center gap-stack-sm">
+      <span class="flex items-end gap-[2px] h-5">
+        <span class="w-1 bg-secondary signal-bar" style="height:8px"></span>
+        <span class="w-1 bg-secondary signal-bar" style="height:16px"></span>
+        <span class="w-1 bg-secondary signal-bar" style="height:12px"></span>
+        <span class="w-1 bg-secondary signal-bar" style="height:20px"></span>
+      </span>
+      <span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">THE SIGNAL</span>
+    </div>
+    <div class="flex items-center gap-stack-md">
+      <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest">Week of September 7, 2026</span>
+      <span class="font-label-mono text-label-mono text-tertiary uppercase tracking-widest border border-outline-variant/60 px-stack-sm py-unit rounded">Agent-Built</span>
     </div>
   </div>
-</aside>
+</header>
 
-<div class="topbar">
-  <div class="crumb">The Signal / <b>Executive Brief</b></div>
-  <div class="right"><span class="badge">Agent-Built</span></div>
-</div>
+<main class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 
-<main>
-  <!-- EXECUTIVE BRIEF -->
-  <section class="hero" id="brief" style="scroll-margin-top:90px">
-    <div class="eyebrow"><span class="dot"></span>Weekly AI Briefing · Week of Sep 7, 2026</div>
-    <h1>From Adoption to Governance</h1>
-    <p class="lede">The decisive turn is no longer <i>whether</i> universities adopt AI, but <i>how</i> they govern it — even as the data shows adoption has already outrun guidance. Faculty and students use AI near-universally, yet fewer than a third of faculty feel equipped or involved. The next phase is assessment redesign, faculty enablement, and formal governance — not tool procurement.</p>
-    <div class="stats">
-      <div class="stat"><div class="tag">Adoption</div><div class="num" data-target="88" data-suffix="%">0%</div><div class="lbl">students use AI</div></div>
-      <div class="stat"><div class="tag">Integration</div><div class="num" data-target="77" data-suffix="%">0%</div><div class="lbl">faculty use AI</div></div>
-      <div class="stat"><div class="tag">Risk Vector</div><div class="num" data-target="13" data-suffix="%">0%</div><div class="lbl">leaders rate faculty AI "strong"</div></div>
-      <div class="stat"><div class="tag">Consensus</div><div class="num" data-target="1" data-suffix=" of 26">0</div><div class="lbl">skills instructors &amp; employers agree on</div></div>
+  <!-- Hero -->
+  <section class="pt-stack-lg pb-stack-lg border-b border-outline-variant/30">
+    <div class="inline-flex items-center gap-stack-sm bg-surface-container-high border border-outline-variant/50 px-stack-sm py-unit rounded">
+      <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      <span class="font-label-mono text-label-mono uppercase text-secondary">Weekly AI Briefing · Higher-Ed Leadership</span>
+    </div>
+    <h1 class="font-display-lg text-display-lg text-on-surface mt-stack-md mb-stack-sm max-w-4xl">From Adoption to Governance</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl border-l-2 border-secondary pl-stack-md py-unit glass-panel rounded">
+      The decisive turn is no longer <i>whether</i> universities adopt AI, but <i>how</i> they govern it — even as the data shows adoption has already outrun guidance. Faculty and students use AI near-universally, yet fewer than a third of faculty feel equipped or involved. The next phase is assessment redesign, faculty enablement, and formal governance — not tool procurement.
+    </p>
+  </section>
+
+  <!-- Headline Statistics -->
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter py-stack-lg border-b border-outline-variant/30">
+    <div class="glass-panel border border-outline-variant rounded p-stack-md flex flex-col justify-between h-40 group hover:border-secondary/50 transition-colors relative overflow-hidden reveal">
+      <div class="absolute top-0 left-0 w-full h-1 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <span class="font-label-mono text-label-mono text-secondary uppercase tracking-wider">Adoption</span>
+      <div><div class="font-headline-md text-headline-md text-on-surface mb-1"><span class="num" data-target="88" data-suffix="%">0%</span></div><p class="font-body-md text-body-md text-on-surface-variant text-sm">Students actively utilizing AI in coursework.</p></div>
+    </div>
+    <div class="glass-panel border border-outline-variant rounded p-stack-md flex flex-col justify-between h-40 group hover:border-tertiary/50 transition-colors relative overflow-hidden reveal">
+      <div class="absolute top-0 left-0 w-full h-1 bg-tertiary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">Integration</span>
+      <div><div class="font-headline-md text-headline-md text-on-surface mb-1"><span class="num" data-target="77" data-suffix="%">0%</span></div><p class="font-body-md text-body-md text-on-surface-variant text-sm">Faculty integrating AI tools into research.</p></div>
+    </div>
+    <div class="glass-panel border border-outline-variant rounded p-stack-md flex flex-col justify-between h-40 group hover:border-error/50 transition-colors relative overflow-hidden reveal">
+      <div class="absolute top-0 left-0 w-full h-1 bg-error opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <span class="font-label-mono text-label-mono text-error uppercase tracking-wider">Risk Vector</span>
+      <div><div class="font-headline-md text-headline-md text-on-surface mb-1"><span class="num" data-target="13" data-suffix="%">0%</span></div><p class="font-body-md text-body-md text-on-surface-variant text-sm">Leaders rating faculty AI governance as "strong".</p></div>
+    </div>
+    <div class="glass-panel border border-outline-variant rounded p-stack-md flex flex-col justify-between h-40 group hover:border-secondary-fixed/50 transition-colors relative overflow-hidden reveal">
+      <div class="absolute top-0 left-0 w-full h-1 bg-secondary-fixed opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <span class="font-label-mono text-label-mono text-secondary-fixed uppercase tracking-wider">Consensus</span>
+      <div><div class="font-headline-md text-headline-md text-on-surface mb-1"><span class="num" data-target="1" data-suffix=" of 26">0</span></div><p class="font-body-md text-body-md text-on-surface-variant text-sm">Skills alignment across top-tier universities.</p></div>
     </div>
   </section>
 
-  <!-- AI STRATEGY & GOVERNANCE -->
-  <section class="block reveal" id="governance">
-    <div class="block-head"><h2><span class="ico">⚖</span>AI Strategy &amp; Governance</h2><span class="count">03 signals</span></div>
-    <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>Georgia Tech publishes a faculty-authored AI Strategy &amp; Playbook</h3><p>Fluency for every student, innovation across the enterprise, institutional leadership — backed by 67 faculty articles and 20 classroom lessons. A replicable model: survey what faculty already do, then codify it.</p><a class="src" href="https://news.research.gatech.edu/2026/08/31/academic-ai-strategy-establishes-shared-vision-teaching-and-learning-georgia-tech" target="_blank" rel="noopener">Georgia Tech <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">02</span><h3>Princeton consolidates AI into a provost-owned unit</h3><p>The Data and Intelligent Systems (DaIS) unit folds Princeton AI and statistics under co-leads, launching AI Alignment &amp; Safety and Societal AI initiatives. A benchmark for giving AI formal, resourced structure.</p><a class="src" href="https://www.princeton.edu/news/2026/09/01/princeton-strengthens-its-support-ai-and-data-science-scholarship-through-data-and" target="_blank" rel="noopener">Princeton <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">03</span><h3>MIT urges "AI-aware" curricula and disclosure over bans</h3><p>A faculty-staff-student committee rejects both shielding students from AI and "AI-proofing" the curriculum. Governance should steer and scaffold AI use rather than prohibit it.</p><a class="src" href="https://govtech.com/education/higher-ed/mit-outlines-responsible-use-policy-recommendations-for-ai" target="_blank" rel="noopener">GovTech <span class="arr">↗</span></a></div>
+  <!-- AI Strategy & Governance -->
+  <section class="py-stack-lg border-b border-outline-variant/30 reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-secondary">gavel</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">AI Strategy &amp; Governance</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">01</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Georgia Tech publishes a faculty-authored AI Strategy &amp; Playbook</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Fluency for every student, innovation across the enterprise, institutional leadership — backed by 67 faculty articles and 20 classroom lessons. A replicable model: survey what faculty already do, then codify it.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://news.research.gatech.edu/2026/08/31/academic-ai-strategy-establishes-shared-vision-teaching-and-learning-georgia-tech" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Georgia Tech</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-tertiary/30 group-hover:bg-tertiary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">02</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Princeton consolidates AI into a provost-owned unit</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">The Data and Intelligent Systems (DaIS) unit folds Princeton AI and statistics under co-leads, launching AI Alignment &amp; Safety and Societal AI initiatives. A benchmark for giving AI formal, resourced structure.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://www.princeton.edu/news/2026/09/01/princeton-strengthens-its-support-ai-and-data-science-scholarship-through-data-and" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Princeton</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">03</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">MIT urges "AI-aware" curricula and disclosure over bans</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">A faculty-staff-student committee rejects both shielding students from AI and "AI-proofing" the curriculum. Governance should steer and scaffold AI use rather than prohibit it.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://govtech.com/education/higher-ed/mit-outlines-responsible-use-policy-recommendations-for-ai" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>GovTech</a>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- AI IN TEACHING & LEARNING -->
-  <section class="block reveal" id="teaching">
-    <div class="block-head"><h2><span class="ico">◆</span>AI in Teaching &amp; Learning</h2><span class="count">03 signals</span></div>
-    <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>Adoption is universal, guidance is not</h3><p>88% of students and 77% of faculty use AI, but 57% of students say assessments lack AI guidance, only 31% of faculty feel involved in policy, and 22% now find it harder to work without AI.</p><a class="src" href="https://edtechinnovationhub.com/news/q6zw9wco2mttajdbd1jyeonjnpiovu" target="_blank" rel="noopener">EdTech Innovation Hub <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">02</span><h3>AI anxiety is now an enrollment and retention risk</h3><p>47% of students have seriously considered changing majors because of AI and 16% already have, yet only 19% feel their program is current for an AI-enabled future.</p><a class="src" href="https://yahoo.com/news/us/articles/50-000-students-faculty-just-182534876.html" target="_blank" rel="noopener">Lumina–Gallup <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">03</span><h3>Instructors and employers agree on only 1 of 26 AI skills</h3><p>Employers weight workflow redesign and technical integration; instructors emphasize critical thinking. There is no shared, assessable framework — building one aligned with employers is a near-term lever.</p><a class="src" href="https://sr.ithaka.org/wp-content/uploads/2026/08/SR-Report-AI-Skills-for-College-Graduates.08.18.26.pdf" target="_blank" rel="noopener">Ithaka S+R <span class="arr">↗</span></a></div>
+  <!-- AI in Teaching & Learning -->
+  <section class="py-stack-lg border-b border-outline-variant/30 reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-secondary">school</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">AI in Teaching &amp; Learning</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">01</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Adoption is universal, guidance is not</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">88% of students and 77% of faculty use AI, but 57% say assessments lack AI guidance, only 31% of faculty feel involved in policy, and 22% now find it harder to work without AI.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://edtechinnovationhub.com/news/q6zw9wco2mttajdbd1jyeonjnpiovu" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>EdTech Innovation Hub</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-tertiary/30 group-hover:bg-tertiary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">02</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">AI anxiety is now an enrollment and retention risk</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">47% of students have seriously considered changing majors because of AI and 16% already have, yet only 19% feel their program is current for an AI-enabled future.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://yahoo.com/news/us/articles/50-000-students-faculty-just-182534876.html" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Lumina–Gallup</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">03</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Instructors and employers agree on only 1 of 26 AI skills</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Employers weight workflow redesign and technical integration; instructors emphasize critical thinking. There is no shared, assessable framework — building one aligned with employers is a near-term lever.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://sr.ithaka.org/wp-content/uploads/2026/08/SR-Report-AI-Skills-for-College-Graduates.08.18.26.pdf" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Ithaka S+R</a>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- AI WORKFORCE & SKILLS -->
-  <section class="block reveal" id="workforce">
-    <div class="block-head"><h2><span class="ico">◈</span>AI Workforce &amp; Skills</h2><span class="count">03 signals</span></div>
-    <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>Faculty capability is the binding constraint</h3><p>Only 13% of leaders rate their faculty's AI knowledge "very strong," and inefficient education-to-work transitions cost the U.S. roughly $1.1 trillion a year. Upskilling faculty is the highest-leverage investment.</p><a class="src" href="https://www.pearson.com/content/dam/global-store/global/resources/ai-readiness/AI-Readiness-Report-2026.pdf" target="_blank" rel="noopener">Pearson <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">02</span><h3>The economy has moved to skills; institutions still signal roles</h3><p>Workers oversupply generalist traits while employers seek specialized, technical, execution-oriented capabilities. Shift curricula toward job-ready, project-based skills.</p><a class="src" href="https://www.accenture.com/content/dam/accenture/final/accenture-com/document-fy26/q3/2026-Wharton-Accenture-Report-FNL.pdf" target="_blank" rel="noopener">Wharton–Accenture <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">03</span><h3>AI job-ad alignment stays below 50% — even at MIT, Stanford, CMU</h3><p>Program materials under-weight transferable skills and workplace tools while over-weighting theory. It is partly a signaling problem: advertise the skills employers pay for.</p><a class="src" href="https://imtech.imt.fr/en/2026/09/01/ai-job-seeks-compatible-degree/" target="_blank" rel="noopener">IMTech <span class="arr">↗</span></a></div>
+  <!-- AI Workforce & Skills -->
+  <section class="py-stack-lg border-b border-outline-variant/30 reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-secondary">groups</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">AI Workforce &amp; Skills</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">01</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Faculty capability is the binding constraint</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Only 13% of leaders rate their faculty's AI knowledge "very strong," and inefficient education-to-work transitions cost the U.S. roughly $1.1 trillion a year. Upskilling faculty is the highest-leverage investment.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://www.pearson.com/content/dam/global-store/global/resources/ai-readiness/AI-Readiness-Report-2026.pdf" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Pearson</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-tertiary/30 group-hover:bg-tertiary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">02</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">The economy has moved to skills; institutions still signal roles</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Workers oversupply generalist traits while employers seek specialized, technical, execution-oriented capabilities. Shift curricula toward job-ready, project-based skills.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://www.accenture.com/content/dam/accenture/final/accenture-com/document-fy26/q3/2026-Wharton-Accenture-Report-FNL.pdf" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Wharton–Accenture</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">03</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">AI job-ad alignment stays below 50% — even at MIT, Stanford, CMU</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Program materials under-weight transferable skills and workplace tools while over-weighting theory. It is partly a signaling problem: advertise the skills employers pay for.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://imtech.imt.fr/en/2026/09/01/ai-job-seeks-compatible-degree/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>IMTech</a>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- AI POLICY & OPERATIONS -->
-  <section class="block reveal" id="policy">
-    <div class="block-head"><h2><span class="ico">◇</span>AI Policy &amp; Operations</h2><span class="count">03 signals</span></div>
-    <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>EU AI Act: high-risk education deferred to Dec 2027 — but not everything</h3><p>The Digital Omnibus pushed high-risk obligations back ~16 months, while prohibited practices, AI literacy, and chatbot disclosure (Article 50) apply now.</p><a class="src" href="https://casrai.org/news/eu-ai-act-digital-omnibus-deadline-delay" target="_blank" rel="noopener">CASRAI <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">02</span><h3>Admissions, grading, and proctoring are the highest-risk deployments</h3><p>Under Annex III these trigger full obligations with penalties up to €15M or 3% of turnover. Audit and document them first.</p><a class="src" href="https://regumatrix.eu/compliance/education-ai" target="_blank" rel="noopener">Regumatrix <span class="arr">↗</span></a></div>
-      <div class="card"><span class="idx">03</span><h3>Florida moves to require AI policies at all 28 state colleges</h3><p>The proposed rule requires board-approved policies on use, integrity, grading, AI literacy, privacy, and parental notification — a State Board vote is set for September 16.</p><a class="src" href="https://www.wlrn.org/education/2026-08-28/desantis-administration-moving-to-regulate-ai-from-pre-k-to-ph-d" target="_blank" rel="noopener">WLRN <span class="arr">↗</span></a></div>
+  <!-- AI Policy & Operations -->
+  <section class="py-stack-lg border-b border-outline-variant/30 reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-secondary">settings_suggest</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">AI Policy &amp; Operations</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">01</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">EU AI Act: high-risk education deferred to Dec 2027 — but not everything</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">The Digital Omnibus pushed high-risk obligations back ~16 months, while prohibited practices, AI literacy, and chatbot disclosure (Article 50) apply now.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://casrai.org/news/eu-ai-act-digital-omnibus-deadline-delay" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>CASRAI</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-tertiary/30 group-hover:bg-tertiary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">02</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Admissions, grading, and proctoring are the highest-risk deployments</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Under Annex III these trigger full obligations with penalties up to €15M or 3% of turnover. Audit and document them first.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://regumatrix.eu/compliance/education-ai" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>Regumatrix</a>
+        </div>
+      </article>
+      <article class="bg-surface-container-low border border-outline-variant rounded relative overflow-hidden group">
+        <div class="absolute left-0 top-0 w-1 h-full bg-secondary/30 group-hover:bg-secondary transition-colors"></div>
+        <div class="p-stack-md flex flex-col gap-stack-sm h-full">
+          <span class="font-label-mono text-label-mono text-tertiary">03</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface text-[17px] leading-snug">Florida moves to require AI policies at all 28 state colleges</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">The proposed rule requires board-approved policies on use, integrity, grading, AI literacy, privacy, and parental notification — a State Board vote is set for September 16.</p>
+          <a class="flex items-center gap-2 text-secondary hover:text-secondary-fixed transition-colors font-label-mono text-label-mono pt-stack-sm border-t border-outline-variant/40" href="https://www.wlrn.org/education/2026-08-28/desantis-administration-moving-to-regulate-ai-from-pre-k-to-ph-d" target="_blank" rel="noopener"><span class="material-symbols-outlined text-sm">link</span>WLRN</a>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- WHAT THIS MEANS -->
-  <section class="block reveal" id="actions">
-    <div class="block-head"><h2><span class="ico">▸</span>What This Means for Your Institution</h2><span class="count">04 moves</span></div>
-    <div class="rows">
-      <div class="row"><span class="glyph">01</span><p><b>Shift spend from tools to faculty enablement.</b> Faculty capability — not procurement — is the binding constraint; training lifts adoption by 14–19 points.</p></div>
-      <div class="row"><span class="glyph">02</span><p><b>Treat assessment redesign and academic integrity as one program.</b> Rewrite assessments to reward work AI can't do alone, paired with clear disclosure expectations.</p></div>
-      <div class="row"><span class="glyph">03</span><p><b>Codify a shared, assessable AI-skills framework — aligned with employers.</b> Define the skills, teach them, and advertise them.</p></div>
-      <div class="row"><span class="glyph">04</span><p><b>Start compliance now where it is already enforceable.</b> AI literacy, transparency, and banned practices are live under the EU AI Act; audit admissions, grading, and proctoring first.</p></div>
+  <!-- What this means -->
+  <section class="py-stack-lg border-b border-outline-variant/30 reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-secondary">insights</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">What this means for your institution</h2>
+    </div>
+    <div class="flex flex-col gap-stack-md">
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="font-label-mono text-label-mono text-secondary">01</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">Shift spend from tools to faculty enablement.</b> Faculty capability — not procurement — is the binding constraint; training lifts adoption by 14–19 points.</p></div>
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="font-label-mono text-label-mono text-secondary">02</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">Treat assessment redesign and academic integrity as one program.</b> Rewrite assessments to reward work AI can't do alone, paired with clear disclosure expectations.</p></div>
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="font-label-mono text-label-mono text-secondary">03</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">Codify a shared, assessable AI-skills framework — aligned with employers.</b> Define the skills, teach them, and advertise them.</p></div>
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="font-label-mono text-label-mono text-secondary">04</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">Start compliance now where it is already enforceable.</b> AI literacy, transparency, and banned practices are live under the EU AI Act; audit admissions, grading, and proctoring first.</p></div>
     </div>
   </section>
 
-  <!-- WORTH WATCHING -->
-  <section class="block reveal" id="watching">
-    <div class="block-head"><h2><span class="ico">◔</span>Worth Watching</h2><span class="count">03 leads</span></div>
-    <div class="rows watch">
-      <div class="row"><span class="glyph">◈</span><p><b>September 16 Florida State Board vote</b> — a precedent-setting statewide mandate that could shape policy expectations in other states.</p></div>
-      <div class="row"><span class="glyph">◈</span><p><b>EU Article 50(2) transparency grace period</b> — systems on the market before August 2 have until December 2 to implement disclosure and watermarking.</p></div>
-      <div class="row"><span class="glyph">◈</span><p><b>DEC dependence metrics</b> — the "22% harder without AI" figure is the earliest quantifiable warning of skills erosion from AI dependence.</p></div>
+  <!-- Worth watching -->
+  <section class="py-stack-lg border-b border-outline-variant/30 reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-tertiary">visibility</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">Worth Watching</h2>
+    </div>
+    <div class="flex flex-col gap-stack-md">
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="material-symbols-outlined text-tertiary">chevron_right</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">September 16 Florida State Board vote</b> — a precedent-setting statewide mandate that could shape policy expectations in other states.</p></div>
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="material-symbols-outlined text-tertiary">chevron_right</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">EU Article 50(2) transparency grace period</b> — systems on the market before August 2 have until December 2 to implement disclosure and watermarking.</p></div>
+      <div class="flex gap-stack-md items-start bg-surface-container-low border border-outline-variant/40 rounded p-stack-md"><span class="material-symbols-outlined text-tertiary">chevron_right</span><p class="font-body-md text-body-md text-on-surface-variant"><b class="text-on-surface">DEC dependence metrics</b> — the "22% harder without AI" figure is the earliest quantifiable warning of skills erosion from AI dependence.</p></div>
     </div>
   </section>
 
-  <!-- WATCH THE BRIEFING -->
-  <section class="block reveal" id="video">
-    <div class="block-head"><h2><span class="ico">▶</span>Watch the Briefing</h2><span class="count">cinematic overview</span></div>
-    <div class="video-card">
-      <div class="vid">
-        <div class="play" onclick="document.getElementById('vidframe').scrollIntoView({behavior:'smooth'})"></div>
-        <div class="status">Video rendering · coming soon</div>
+  <!-- Watch the briefing -->
+  <section class="py-stack-lg reveal">
+    <div class="flex items-center gap-stack-sm mb-stack-md">
+      <span class="material-symbols-outlined text-secondary">play_circle</span>
+      <h2 class="font-headline-sm text-headline-sm text-on-surface">Watch the Briefing</h2>
+    </div>
+    <div class="glass-panel border border-outline-variant rounded p-stack-md">
+      <div class="relative rounded overflow-hidden aspect-video bg-surface-container-high border border-outline-variant/30">
+        <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+          <div class="w-16 h-16 rounded-full bg-secondary/20 backdrop-blur-md flex items-center justify-center border border-secondary/50 signal-glow">
+            <span class="material-symbols-outlined text-secondary text-4xl ml-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+          </div>
+        </div>
+        <div class="absolute bottom-2 right-2 bg-black/80 backdrop-blur text-on-surface font-label-mono text-label-mono px-2 py-1 rounded text-xs border border-white/10">Coming soon</div>
       </div>
-      <h3>From Adoption to Governance — cinematic overview</h3>
-      <p>An AI-generated video briefing of this issue, produced by the Videographer bot via NotebookLM. The embed will appear here once generation completes.</p>
+      <h3 class="font-headline-sm text-headline-sm text-on-surface text-lg mt-stack-sm mb-1">From Adoption to Governance — cinematic overview</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">An AI-generated video briefing of this issue, produced by the Videographer bot via NotebookLM. The embed will appear here once generation completes.</p>
     </div>
   </section>
+
 </main>
 
-<footer>
-  <div class="inner">
-    <p class="built">Built end-to-end by Hermes agent bots — <code>Scout</code> researches daily, <code>Editor</code> writes weekly, <code>Publisher</code> prepares the post, <code>Videographer</code> produces the briefing. A demo of Hermes Bot Mode and MCP.</p>
-    <div class="meta">Design system · Signal Tech-Noir · member portal · generated with Google Stitch</div>
+<footer class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg mt-stack-lg border-t border-outline-variant/30">
+  <div class="flex flex-col items-center gap-stack-md text-center">
+    <p class="font-body-md text-body-md text-on-surface-variant text-sm max-w-2xl">Built end-to-end by Hermes agent bots — Scout researches daily, Editor writes weekly, Publisher prepares the post, Videographer produces the briefing. A demo of Hermes Bot Mode and MCP.</p>
+    <div class="font-label-mono text-label-mono text-outline uppercase tracking-widest">Design system · Signal Tech-Noir · generated with Google Stitch</div>
   </div>
 </footer>
 
 <script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const d=(e.target.dataset.delay||0);e.target.style.transitionDelay=d+'ms';e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-  revealEls.forEach(el=>io.observe(el));
-  function animateNum(el){const t=parseFloat(el.dataset.target);const s=el.dataset.suffix||'';const dur=1600;const st=performance.now();function tick(n){let p=Math.min((n-st)/dur,1);p=1-Math.pow(1-p,3);el.textContent=Math.round(t*p)+s;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function animateNum(el){const t=parseFloat(el.dataset.target);const s=el.dataset.suffix||'';const dur=1400;const st=performance.now();function tick(n){let p=Math.min((n-st)/dur,1);p=1-Math.pow(1-p,3);el.textContent=Math.round(t*p)+s;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
   const so=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateNum(e.target);so.unobserve(e.target);}});},{threshold:.5});
-  document.querySelectorAll('.stat .num').forEach(n=>so.observe(n));
-  // active nav highlight on scroll
-  const links=[...document.querySelectorAll('.sidebar nav a')];
-  const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  const no=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-40% 0px -55% 0px'});
-  secs.forEach(s=>no.observe(s));
+  document.querySelectorAll('.num').forEach(n=>so.observe(n));
 </script>
-</body>
-</html>
+</body></html>
