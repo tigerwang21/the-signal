@@ -49,11 +49,15 @@
       linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
     background-size:24px 24px;
+    animation:gridDrift 26s linear infinite;
   }
   .glow{
     position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;
     background:radial-gradient(circle at 50% 0%, #00e3fd 0%, transparent 62%);
+    animation:breathe 9s ease-in-out infinite;
   }
+  @keyframes gridDrift{from{background-position:0 0}to{background-position:24px 24px}}
+  @keyframes breathe{0%,100%{opacity:.16;transform:scale(1)}50%{opacity:.3;transform:scale(1.06)}}
   .wrap{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:10}
   @media(min-width:768px){.wrap{padding:0 40px}}
 
@@ -67,24 +71,29 @@
   .mast{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
   .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--on-bg);white-space:nowrap}
   .brand .bars{display:inline-flex;align-items:flex-end;gap:2px;height:22px}
-  .brand .bars span{width:4px;background:var(--cyan);border-radius:1px;animation:pulse 2.4s ease-in-out infinite}
+  .brand .bars span{width:4px;background:var(--cyan);border-radius:1px;animation:wave 1.4s ease-in-out infinite}
   .brand .bars span:nth-child(1){height:8px}
-  .brand .bars span:nth-child(2){height:16px;animation-delay:.2s}
-  .brand .bars span:nth-child(3){height:12px;animation-delay:.4s}
-  .brand .bars span:nth-child(4){height:20px;animation-delay:.6s}
+  .brand .bars span:nth-child(2){height:16px;animation-delay:.12s}
+  .brand .bars span:nth-child(3){height:12px;animation-delay:.24s}
+  .brand .bars span:nth-child(4){height:20px;animation-delay:.36s}
   .mast .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);border:1px solid rgba(70,70,74,.5);padding:5px 10px;border-radius:4px}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  @keyframes wave{0%,100%{transform:scaleY(.7);opacity:.55}50%{transform:scaleY(1.15);opacity:1}}
 
   /* hero */
-  .hero{padding:56px 0 40px;border-bottom:1px solid rgba(70,70,74,.3)}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--surface-high);border:1px solid rgba(70,70,74,.5);padding:6px 12px;border-radius:4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+  .hero{padding:56px 0 40px;border-bottom:1px solid rgba(70,70,74,.3);position:relative;overflow:hidden}
+  .scanline{position:absolute;left:0;right:0;height:2px;top:-10%;background:linear-gradient(90deg,transparent,rgba(0,227,253,.7),transparent);box-shadow:0 0 22px rgba(0,227,253,.45);animation:scan 7s linear infinite;pointer-events:none}
+  @keyframes scan{0%{top:-10%}100%{top:110%}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--surface-high);border:1px solid rgba(70,70,74,.5);padding:6px 12px;border-radius:4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);animation:rise .7s .1s both}
   .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 1.6s ease-in-out infinite}
-  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.02em;margin:22px 0 16px;max-width:900px}
-  .hero .lede{font-size:18px;line-height:1.6;color:var(--on-variant);max-width:760px;border-left:2px solid var(--cyan);padding:6px 0 6px 16px;background:linear-gradient(90deg,rgba(27,27,31,.6),transparent)}
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(70,70,74,.35);border:1px solid rgba(70,70,74,.35);border-radius:8px;overflow:hidden;margin-top:28px}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,227,253,.5)}50%{opacity:.5;box-shadow:0 0 0 6px rgba(0,227,253,0)}}
+  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.02em;margin:22px 0 16px;max-width:900px;animation:rise .7s .25s both}
+  .hero .lede{font-size:18px;line-height:1.6;color:var(--on-variant);max-width:760px;border-left:2px solid var(--cyan);padding:6px 0 6px 16px;background:linear-gradient(90deg,rgba(27,27,31,.6),transparent);animation:rise .7s .4s both}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(70,70,74,.35);border:1px solid rgba(70,70,74,.35);border-radius:8px;overflow:hidden;margin-top:28px;animation:rise .7s .55s both}
   @media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr)}}
-  .stat{background:var(--surface-low);padding:18px 16px}
-  .stat .num{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:-.02em;color:var(--cyan);line-height:1}
+  .stat{background:var(--surface-low);padding:18px 16px;transition:background .3s}
+  .stat:hover{background:var(--surface-container)}
+  .stat .num{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:-.02em;color:var(--cyan);line-height:1;text-shadow:0 0 18px rgba(0,227,253,.35)}
   .stat .lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-variant);margin-top:8px}
 
   /* sections */
@@ -101,20 +110,24 @@
     border:1px solid rgba(70,70,74,.5);
     border-radius:8px;padding:20px;
     display:flex;flex-direction:column;gap:12px;
-    transition:border-color .25s,transform .25s;
+    transition:border-color .3s,transform .3s,box-shadow .3s;
   }
-  .card:hover{border-color:rgba(0,227,253,.5);transform:translateY(-2px)}
-  .card::before{content:'';position:absolute;inset:0;background:rgba(0,227,253,.05);opacity:0;transition:opacity .25s;pointer-events:none}
+  .card:hover{border-color:rgba(0,227,253,.55);transform:translateY(-3px);box-shadow:0 0 26px rgba(0,227,253,.12),0 10px 28px rgba(0,0,0,.45)}
+  .card::before{content:'';position:absolute;inset:0;background:rgba(0,227,253,.06);opacity:0;transition:opacity .3s;pointer-events:none}
   .card:hover::before{opacity:1}
   .card .idx{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
-  .card h3{font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.35;color:var(--on-bg)}
+  .card h3{font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.35;color:var(--on-bg);transition:color .3s}
+  .card:hover h3{color:var(--cyan-soft)}
   .card p{font-size:14px;color:var(--on-variant);flex-grow:1}
-  .card a.src{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:4px;margin-top:auto}
+  .card a.src{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:5px;margin-top:auto}
+  .card a.src .arr{display:inline-block;transition:transform .3s}
   .card a.src:hover{color:var(--cyan-soft)}
+  .card a.src:hover .arr{transform:translateX(4px)}
 
   /* watch */
   .watch{display:flex;flex-direction:column;gap:12px}
-  .watch .row{display:flex;gap:14px;align-items:flex-start;background:var(--surface-low);border:1px solid rgba(70,70,74,.4);border-radius:8px;padding:16px 18px}
+  .watch .row{display:flex;gap:14px;align-items:flex-start;background:var(--surface-low);border:1px solid rgba(70,70,74,.4);border-radius:8px;padding:16px 18px;transition:border-color .3s,transform .3s}
+  .watch .row:hover{border-color:rgba(209,188,255,.4);transform:translateX(4px)}
   .watch .row .glyph{color:var(--purple);font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1;flex-shrink:0}
   .watch .row p{font-size:15px;color:var(--on-variant)}
   .watch .row p b{color:var(--on-bg);font-weight:600}
@@ -126,6 +139,16 @@
   footer .built{font-size:13px;color:var(--on-variant);max-width:640px}
   footer .built code{font-family:var(--font-body);color:var(--cyan);font-size:12px}
   footer .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--outline)}
+
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    .grid-pattern,.glow,.scanline{animation:none}
+  }
 </style>
 </head>
 <body>
@@ -145,65 +168,66 @@
 <main class="wrap">
   <!-- HERO -->
   <section class="hero">
+    <div class="scanline"></div>
     <div class="eyebrow"><span class="dot"></span>Weekly AI Briefing · Week of Aug 31, 2026</div>
     <h1>Agents Go Mainstream — and the Attack Surface Follows</h1>
     <p class="lede">The agentic transition moved from early adoption to the default, and the consequences showed up on every front — 90% of developers now use AI coding agents weekly, while the same seven days surfaced a steady stream of agent-specific flaws, from prompt injection to supply-chain breaches.</p>
     <div class="stats">
-      <div class="stat"><div class="num">90%</div><div class="lbl">devs use agents weekly</div></div>
-      <div class="stat"><div class="num">57%</div><div class="lbl">orgs run agents in prod</div></div>
-      <div class="stat"><div class="num">2,500+</div><div class="lbl">orgs in LiteLLM breach</div></div>
-      <div class="stat"><div class="num">8.1</div><div class="lbl">NemoClaw CVSS score</div></div>
+      <div class="stat"><div class="num" data-target="90" data-suffix="%">0%</div><div class="lbl">devs use agents weekly</div></div>
+      <div class="stat"><div class="num" data-target="57" data-suffix="%">0%</div><div class="lbl">orgs run agents in prod</div></div>
+      <div class="stat"><div class="num" data-target="2500" data-suffix="+" data-comma="1">0+</div><div class="lbl">orgs in LiteLLM breach</div></div>
+      <div class="stat"><div class="num" data-target="8.1" data-decimals="1">0.0</div><div class="lbl">NemoClaw CVSS score</div></div>
     </div>
   </section>
 
   <!-- AI TRENDS -->
   <section class="block">
-    <div class="block-head"><h2>AI Trends</h2><span class="count">04 signals</span></div>
+    <div class="block-head reveal"><h2>AI Trends</h2><span class="count">04 signals</span></div>
     <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>The Pentagon deploys its own ChatGPT and Grok</h3><p>The DoD added "ChatGPT Mil" and "Grok for Government" to its GenAI.mil portal for 3 million personnel, while Anthropic's Claude stays out amid its supply-chain court fight.</p><a class="src" href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" target="_blank" rel="noopener">TechCrunch ↗</a></div>
-      <div class="card"><span class="idx">02</span><h3>Labor anxiety reaches the mainstream</h3><p>Bill Gates called AI's rise "one of the most turbulent times in human history"; Andrew Yang argued "the coal miners did not become coders"; Amazon confirmed Mechanical Turk shuts down Sept 30.</p><a class="src" href="https://www.reddit.com/r/artificial/comments/1w05qir/bill_gates_warns_rise_of_ai_will_be_one_of_the/" target="_blank" rel="noopener">Bill Gates ↗</a></div>
-      <div class="card"><span class="idx">03</span><h3>The token-economics "flip"</h3><p>Top models now take roughly half of token share while Anthropic's spend runs 23x DeepSeek's, as Chinese open-weight releases like Ox Alpha and MiniMax H3 keep closing the gap.</p><a class="src" href="https://www.youtube.com/watch?v=2w7ZdceZT-g" target="_blank" rel="noopener">Berman ↗</a></div>
-      <div class="card"><span class="idx">04</span><h3>Nvidia closes in on Hugging Face</h3><p>Nvidia is reportedly nearing a deal to acquire the open-source AI platform — consolidating significant developer infrastructure under a major chipmaker.</p><a class="src" href="https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/" target="_blank" rel="noopener">TechCrunch ↗</a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>The Pentagon deploys its own ChatGPT and Grok</h3><p>The DoD added "ChatGPT Mil" and "Grok for Government" to its GenAI.mil portal for 3 million personnel, while Anthropic's Claude stays out amid its supply-chain court fight.</p><a class="src" href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" target="_blank" rel="noopener">TechCrunch <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>Labor anxiety reaches the mainstream</h3><p>Bill Gates called AI's rise "one of the most turbulent times in human history"; Andrew Yang argued "the coal miners did not become coders"; Amazon confirmed Mechanical Turk shuts down Sept 30.</p><a class="src" href="https://www.reddit.com/r/artificial/comments/1w05qir/bill_gates_warns_rise_of_ai_will_be_one_of_the/" target="_blank" rel="noopener">Bill Gates <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>The token-economics "flip"</h3><p>Top models now take roughly half of token share while Anthropic's spend runs 23x DeepSeek's, as Chinese open-weight releases like Ox Alpha and MiniMax H3 keep closing the gap.</p><a class="src" href="https://www.youtube.com/watch?v=2w7ZdceZT-g" target="_blank" rel="noopener">Berman <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">04</span><h3>Nvidia closes in on Hugging Face</h3><p>Nvidia is reportedly nearing a deal to acquire the open-source AI platform — consolidating significant developer infrastructure under a major chipmaker.</p><a class="src" href="https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/" target="_blank" rel="noopener">TechCrunch <span class="arr">↗</span></a></div>
     </div>
   </section>
 
   <!-- AI IN EDUCATION -->
   <section class="block">
-    <div class="block-head"><h2>AI in Education</h2><span class="count">03 signals</span></div>
+    <div class="block-head reveal"><h2>AI in Education</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>Universities mandate AI literacy instead of banning it</h3><p>University of Tampa requires a one-credit AI literacy course for all sophomores, and NUS makes applied generative AI compulsory for every first-year — both framing judgment and verification as the core skill.</p><a class="src" href="https://www.govtech.com/education/higher-ed/university-of-tampa-mandates-ai-literacy-class-for-sophomores" target="_blank" rel="noopener">GovTech ↗</a></div>
-      <div class="card"><span class="idx">02</span><h3>UC Berkeley's CS 61A adds an AI coding-agent project</h3><p>The intro course moves from Scheme to Gleam and has students use an AI agent to build part of an interpreter, with checkoffs and a campus AI tutor to verify genuine understanding.</p><a class="src" href="https://www.dailycal.org/news/campus/academics/uc-berkeley-shakes-up-introductory-cs-course-by-implementing-ai-assisted-project/article_77e51e53-80ae-4e7e-8999-2a2111fd2106.html" target="_blank" rel="noopener">Daily Cal ↗</a></div>
-      <div class="card"><span class="idx">03</span><h3>CMU and Johns Hopkins stress "don't let AI think for you"</h3><p>CMU's GAITAR fellowship and "Effective Coding With AI" emphasize critical thinking, while Johns Hopkins and Great Learning launch an 18-week Agentic AI certificate.</p><a class="src" href="https://www.cmu.edu/news/stories/archives/2026/august/navigating-the-ai-era-with-a-cmu-focus-on-critical-thinking" target="_blank" rel="noopener">CMU ↗</a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>Universities mandate AI literacy instead of banning it</h3><p>University of Tampa requires a one-credit AI literacy course for all sophomores, and NUS makes applied generative AI compulsory for every first-year — both framing judgment and verification as the core skill.</p><a class="src" href="https://www.govtech.com/education/higher-ed/university-of-tampa-mandates-ai-literacy-class-for-sophomores" target="_blank" rel="noopener">GovTech <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>UC Berkeley's CS 61A adds an AI coding-agent project</h3><p>The intro course moves from Scheme to Gleam and has students use an AI agent to build part of an interpreter, with checkoffs and a campus AI tutor to verify genuine understanding.</p><a class="src" href="https://www.dailycal.org/news/campus/academics/uc-berkeley-shakes-up-introductory-cs-course-by-implementing-ai-assisted-project/article_77e51e53-80ae-4e7e-8999-2a2111fd2106.html" target="_blank" rel="noopener">Daily Cal <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>CMU and Johns Hopkins stress "don't let AI think for you"</h3><p>CMU's GAITAR fellowship and "Effective Coding With AI" emphasize critical thinking, while Johns Hopkins and Great Learning launch an 18-week Agentic AI certificate.</p><a class="src" href="https://www.cmu.edu/news/stories/archives/2026/august/navigating-the-ai-era-with-a-cmu-focus-on-critical-thinking" target="_blank" rel="noopener">CMU <span class="arr">↗</span></a></div>
     </div>
   </section>
 
   <!-- AGENTIC SOFTWARE ENGINEERING -->
   <section class="block">
-    <div class="block-head"><h2>Agentic Software Engineering</h2><span class="count">03 signals</span></div>
+    <div class="block-head reveal"><h2>Agentic Software Engineering</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>Agent adoption hits the mainstream: 90% weekly, 68% daily</h3><p>JetBrains' survey of 15,000+ developers shows Claude Code (39%) nearly doubling GitHub Copilot (21%), with Codex up ~5x to 16% and Cursor slipping to 12%.</p><a class="src" href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/" target="_blank" rel="noopener">JetBrains ↗</a></div>
-      <div class="card"><span class="idx">02</span><h3>57% of organizations now run agents in production</h3><p>LangChain's State of Agent Engineering reports quality as the top production barrier, observability near-universal at 89% versus 52% for evals, and security as the second-biggest concern.</p><a class="src" href="https://www.langchain.com/state-of-agent-engineering" target="_blank" rel="noopener">LangChain ↗</a></div>
-      <div class="card"><span class="idx">03</span><h3>Context engineering, not more intelligence, is the unlock</h3><p>Agents already write 50–60% of code on some teams; structured context across the SDLC — not just a smarter model — is what lets them meet DevOps-grade precision.</p><a class="src" href="https://devops.com/context-engineering-is-the-key-to-unlocking-ai-agents-in-devops" target="_blank" rel="noopener">DevOps.com ↗</a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>Agent adoption hits the mainstream: 90% weekly, 68% daily</h3><p>JetBrains' survey of 15,000+ developers shows Claude Code (39%) nearly doubling GitHub Copilot (21%), with Codex up ~5x to 16% and Cursor slipping to 12%.</p><a class="src" href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/" target="_blank" rel="noopener">JetBrains <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>57% of organizations now run agents in production</h3><p>LangChain's State of Agent Engineering reports quality as the top production barrier, observability near-universal at 89% versus 52% for evals, and security as the second-biggest concern.</p><a class="src" href="https://www.langchain.com/state-of-agent-engineering" target="_blank" rel="noopener">LangChain <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>Context engineering, not more intelligence, is the unlock</h3><p>Agents already write 50–60% of code on some teams; structured context across the SDLC — not just a smarter model — is what lets them meet DevOps-grade precision.</p><a class="src" href="https://devops.com/context-engineering-is-the-key-to-unlocking-ai-agents-in-devops" target="_blank" rel="noopener">DevOps.com <span class="arr">↗</span></a></div>
     </div>
   </section>
 
   <!-- AI CODING SECURITY -->
   <section class="block">
-    <div class="block-head"><h2>AI Coding Security</h2><span class="count">03 signals</span></div>
+    <div class="block-head reveal"><h2>AI Coding Security</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card"><span class="idx">01</span><h3>Prompt injection graduates from theory to shipped CVEs</h3><p>Amazon's Kiro IDE can be driven to exfiltrate data via a crafted workspace file, and NVIDIA's NemoClaw (CVE-2026-65105, CVSS 8.1) lets a webpage poison a local Ollama model.</p><a class="src" href="https://realhacker.news/amazon-kiro-prompt-injection-can-exfiltrate-sensitive-data-through-kiro-powers" target="_blank" rel="noopener">Real Hacker News ↗</a></div>
-      <div class="card"><span class="idx">02</span><h3>A LiteLLM supply-chain breach exposed 2,500+ organizations</h3><p>A backdoored model-routing proxy, compromised via a tainted scanner container, leaked 153GB of stolen credentials and flagged 434,000 CI/CD pipelines.</p><a class="src" href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" target="_blank" rel="noopener">CloudSEK ↗</a></div>
-      <div class="card"><span class="idx">03</span><h3>Claude Code and Grok each leak via configuration injection</h3><p>Claude Code's .claude/settings.json hook enables remote code execution and API-key theft, while Grok's "Cryptographic Context Injection" still exposes chat history with no patch published.</p><a class="src" href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">Cyberdesserts ↗</a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>Prompt injection graduates from theory to shipped CVEs</h3><p>Amazon's Kiro IDE can be driven to exfiltrate data via a crafted workspace file, and NVIDIA's NemoClaw (CVE-2026-65105, CVSS 8.1) lets a webpage poison a local Ollama model.</p><a class="src" href="https://realhacker.news/amazon-kiro-prompt-injection-can-exfiltrate-sensitive-data-through-kiro-powers" target="_blank" rel="noopener">Real Hacker News <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>A LiteLLM supply-chain breach exposed 2,500+ organizations</h3><p>A backdoored model-routing proxy, compromised via a tainted scanner container, leaked 153GB of stolen credentials and flagged 434,000 CI/CD pipelines.</p><a class="src" href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" target="_blank" rel="noopener">CloudSEK <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>Claude Code and Grok each leak via configuration injection</h3><p>Claude Code's .claude/settings.json hook enables remote code execution and API-key theft, while Grok's "Cryptographic Context Injection" still exposes chat history with no patch published.</p><a class="src" href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">Cyberdesserts <span class="arr">↗</span></a></div>
     </div>
   </section>
 
   <!-- WORTH WATCHING -->
   <section class="block" style="border-bottom:none">
-    <div class="block-head"><h2>Worth Watching</h2><span class="count">03 leads</span></div>
+    <div class="block-head reveal"><h2>Worth Watching</h2><span class="count">03 leads</span></div>
     <div class="watch">
-      <div class="row"><span class="glyph">◈</span><p><b>Prompt-injection fixes</b> — whether xAI patches Grok's Cryptographic Context Injection with a CVE, and whether NVIDIA ships its Windows/WSL fix for NemoClaw before the poisoning pattern spreads.</p></div>
-      <div class="row"><span class="glyph">◈</span><p><b>The Nvidia–Hugging Face deal</b> — whether the acquisition closes, and how regulators and the open-source community respond to a chipmaker owning key developer infrastructure.</p></div>
-      <div class="row"><span class="glyph">◈</span><p><b>OpenAI's EU DSA window</b> — first risk assessments under ChatGPT's new "very large online search engine" designation are due around late November, with fines up to 6% of global turnover in play.</p></div>
+      <div class="row reveal"><span class="glyph">◈</span><p><b>Prompt-injection fixes</b> — whether xAI patches Grok's Cryptographic Context Injection with a CVE, and whether NVIDIA ships its Windows/WSL fix for NemoClaw before the poisoning pattern spreads.</p></div>
+      <div class="row reveal"><span class="glyph">◈</span><p><b>The Nvidia–Hugging Face deal</b> — whether the acquisition closes, and how regulators and the open-source community respond to a chipmaker owning key developer infrastructure.</p></div>
+      <div class="row reveal"><span class="glyph">◈</span><p><b>OpenAI's EU DSA window</b> — first risk assessments under ChatGPT's new "very large online search engine" designation are due around late November, with fines up to 6% of global turnover in play.</p></div>
     </div>
   </section>
 </main>
@@ -215,5 +239,57 @@
     <div class="meta">Design system · Signal Tech-Noir · generated with Google Stitch</div>
   </div>
 </footer>
+
+<script>
+  // Scroll reveal (staggered)
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const delay = (e.target.dataset.delay || 0);
+        e.target.style.transitionDelay = delay + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+
+  // stagger cards within each grid
+  document.querySelectorAll('.cards').forEach(grid=>{
+    grid.querySelectorAll('.card.reveal').forEach((c,i)=> c.dataset.delay = i*90);
+  });
+  document.querySelectorAll('.watch').forEach(w=>{
+    w.querySelectorAll('.row.reveal').forEach((r,i)=> r.dataset.delay = i*110);
+  });
+
+  revealEls.forEach(el=>io.observe(el));
+
+  // KPI count-up
+  function animateNum(el){
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const decimals = parseInt(el.dataset.decimals || '0',10);
+    const comma = el.dataset.comma === '1';
+    const dur = 1600;
+    const start = performance.now();
+    function tick(now){
+      let p = Math.min((now-start)/dur, 1);
+      p = 1 - Math.pow(1-p, 3); // ease-out cubic
+      const val = target * p;
+      let txt;
+      if(comma) txt = Math.round(val).toLocaleString('en-US');
+      else txt = decimals ? val.toFixed(decimals) : String(Math.round(val));
+      el.textContent = txt + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ animateNum(e.target); statObs.unobserve(e.target); }
+    });
+  },{threshold:0.5});
+  document.querySelectorAll('.stat .num').forEach(n=>statObs.observe(n));
+</script>
 </body>
 </html>
