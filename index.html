@@ -3,83 +3,38 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Signal — Agents Go Mainstream, and the Attack Surface Follows</title>
+<title>The Signal — From Adoption to Governance</title>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="The Signal — Agents Go Mainstream, and the Attack Surface Follows"/>
-<meta property="og:description" content="A weekly AI briefing built end-to-end by Hermes agent bots, powered by MCP."/>
+<meta property="og:title" content="The Signal — From Adoption to Governance"/>
+<meta property="og:description" content="A weekly AI briefing for higher-education leadership, built end-to-end by Hermes agent bots, powered by MCP."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"/>
 <style>
   :root{
-    --bg:#0a0a0b;
-    --surface:#131317;
-    --surface-low:#1b1b1f;
-    --surface-container:#1f1f23;
-    --surface-high:#2a2a2e;
-    --surface-lowest:#0e0e12;
-    --primary:#c8c6c7;
-    --on-bg:#e4e1e7;
-    --on-variant:#c7c6ca;
-    --outline:#919094;
-    --outline-variant:#46464a;
-    --cyan:#00e3fd;
-    --cyan-soft:#bdf4ff;
-    --purple:#d1bcff;
-    --purple-container:#0f002f;
-    --font-display:'Manrope',sans-serif;
-    --font-body:'Geist',sans-serif;
+    --bg:#0a0a0b;--surface:#131317;--surface-low:#1b1b1f;--surface-container:#1f1f23;--surface-high:#2a2a2e;--surface-lowest:#0e0e12;
+    --primary:#c8c6c7;--on-bg:#e4e1e7;--on-variant:#c7c6ca;--outline:#919094;--outline-variant:#46464a;
+    --cyan:#00e3fd;--cyan-soft:#bdf4ff;--purple:#d1bcff;--purple-container:#0f002f;
+    --font-display:'Manrope',sans-serif;--font-body:'Geist',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--on-bg);
-    font-family:var(--font-body);
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+  body{background:var(--bg);color:var(--on-bg);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  /* ambient background */
-  .grid-pattern{
-    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
-    background-size:24px 24px;
-    animation:gridDrift 26s linear infinite;
-  }
-  .glow{
-    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;
-    background:radial-gradient(circle at 50% 0%, #00e3fd 0%, transparent 62%);
-    animation:breathe 9s ease-in-out infinite;
-  }
+  .grid-pattern{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.045) 1px,transparent 1px);background-size:24px 24px;animation:gridDrift 26s linear infinite}
+  .glow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;background:radial-gradient(circle at 50% 0%,#00e3fd 0%,transparent 62%);animation:breathe 9s ease-in-out infinite}
   @keyframes gridDrift{from{background-position:0 0}to{background-position:24px 24px}}
   @keyframes breathe{0%,100%{opacity:.16;transform:scale(1)}50%{opacity:.3;transform:scale(1.06)}}
   .wrap{max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:10}
   @media(min-width:768px){.wrap{padding:0 40px}}
-
-  /* header */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(10,10,11,.78);
-    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(70,70,74,.35);
-  }
+  header{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(70,70,74,.35)}
   .mast{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
   .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--on-bg);white-space:nowrap}
   .brand .bars{display:inline-flex;align-items:flex-end;gap:2px;height:22px}
   .brand .bars span{width:4px;background:var(--cyan);border-radius:1px;animation:wave 1.4s ease-in-out infinite}
-  .brand .bars span:nth-child(1){height:8px}
-  .brand .bars span:nth-child(2){height:16px;animation-delay:.12s}
-  .brand .bars span:nth-child(3){height:12px;animation-delay:.24s}
-  .brand .bars span:nth-child(4){height:20px;animation-delay:.36s}
+  .brand .bars span:nth-child(1){height:8px}.brand .bars span:nth-child(2){height:16px;animation-delay:.12s}.brand .bars span:nth-child(3){height:12px;animation-delay:.24s}.brand .bars span:nth-child(4){height:20px;animation-delay:.36s}
   .mast .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);border:1px solid rgba(70,70,74,.5);padding:5px 10px;border-radius:4px}
   @keyframes wave{0%,100%{transform:scaleY(.7);opacity:.55}50%{transform:scaleY(1.15);opacity:1}}
-
-  /* hero */
   .hero{padding:56px 0 40px;border-bottom:1px solid rgba(70,70,74,.3);position:relative;overflow:hidden}
   .scanline{position:absolute;left:0;right:0;height:2px;top:-10%;background:linear-gradient(90deg,transparent,rgba(0,227,253,.7),transparent);box-shadow:0 0 22px rgba(0,227,253,.45);animation:scan 7s linear infinite;pointer-events:none}
   @keyframes scan{0%{top:-10%}100%{top:110%}}
@@ -87,7 +42,7 @@
   .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 1.6s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,227,253,.5)}50%{opacity:.5;box-shadow:0 0 0 6px rgba(0,227,253,0)}}
   .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.02em;margin:22px 0 16px;max-width:900px;animation:rise .7s .25s both}
-  .hero .lede{font-size:18px;line-height:1.6;color:var(--on-variant);max-width:760px;border-left:2px solid var(--cyan);padding:6px 0 6px 16px;background:linear-gradient(90deg,rgba(27,27,31,.6),transparent);animation:rise .7s .4s both}
+  .hero .lede{font-size:18px;line-height:1.6;color:var(--on-variant);max-width:780px;border-left:2px solid var(--cyan);padding:6px 0 6px 16px;background:linear-gradient(90deg,rgba(27,27,31,.6),transparent);animation:rise .7s .4s both}
   @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(70,70,74,.35);border:1px solid rgba(70,70,74,.35);border-radius:8px;overflow:hidden;margin-top:28px;animation:rise .7s .55s both}
   @media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr)}}
@@ -95,8 +50,6 @@
   .stat:hover{background:var(--surface-container)}
   .stat .num{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:-.02em;color:var(--cyan);line-height:1;text-shadow:0 0 18px rgba(0,227,253,.35)}
   .stat .lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-variant);margin-top:8px}
-
-  /* sections */
   section.block{padding:40px 0;border-bottom:1px solid rgba(70,70,74,.3)}
   .block-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;gap:16px}
   .block-head h2{font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:-.01em}
@@ -104,14 +57,7 @@
   .cards{display:grid;grid-template-columns:1fr;gap:14px}
   @media(min-width:768px){.cards{grid-template-columns:repeat(2,1fr)}}
   @media(min-width:1024px){.cards{grid-template-columns:repeat(3,1fr)}}
-  .card{
-    position:relative;overflow:hidden;
-    background:var(--surface-low);
-    border:1px solid rgba(70,70,74,.5);
-    border-radius:8px;padding:20px;
-    display:flex;flex-direction:column;gap:12px;
-    transition:border-color .3s,transform .3s,box-shadow .3s;
-  }
+  .card{position:relative;overflow:hidden;background:var(--surface-low);border:1px solid rgba(70,70,74,.5);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:12px;transition:border-color .3s,transform .3s,box-shadow .3s}
   .card:hover{border-color:rgba(0,227,253,.55);transform:translateY(-3px);box-shadow:0 0 26px rgba(0,227,253,.12),0 10px 28px rgba(0,0,0,.45)}
   .card::before{content:'';position:absolute;inset:0;background:rgba(0,227,253,.06);opacity:0;transition:opacity .3s;pointer-events:none}
   .card:hover::before{opacity:1}
@@ -123,32 +69,27 @@
   .card a.src .arr{display:inline-block;transition:transform .3s}
   .card a.src:hover{color:var(--cyan-soft)}
   .card a.src:hover .arr{transform:translateX(4px)}
-
-  /* watch */
+  .takeaways{display:flex;flex-direction:column;gap:12px}
+  .takeaways .row{display:flex;gap:14px;align-items:flex-start;background:var(--surface-low);border:1px solid rgba(70,70,74,.4);border-radius:8px;padding:16px 18px;transition:border-color .3s,transform .3s}
+  .takeaways .row:hover{border-color:rgba(0,227,253,.45);transform:translateX(4px)}
+  .takeaways .row .glyph{color:var(--cyan);font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1;flex-shrink:0}
+  .takeaways .row p{font-size:15px;color:var(--on-variant)}
+  .takeaways .row p b{color:var(--on-bg);font-weight:600}
   .watch{display:flex;flex-direction:column;gap:12px}
   .watch .row{display:flex;gap:14px;align-items:flex-start;background:var(--surface-low);border:1px solid rgba(70,70,74,.4);border-radius:8px;padding:16px 18px;transition:border-color .3s,transform .3s}
   .watch .row:hover{border-color:rgba(209,188,255,.4);transform:translateX(4px)}
   .watch .row .glyph{color:var(--purple);font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1;flex-shrink:0}
   .watch .row p{font-size:15px;color:var(--on-variant)}
   .watch .row p b{color:var(--on-bg);font-weight:600}
-
-  /* footer */
   footer{background:var(--surface-lowest);border-top:1px solid rgba(70,70,74,.3);margin-top:16px}
   footer .inner{padding:36px 0;display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
   footer .brand{color:var(--primary);opacity:.9}
   footer .built{font-size:13px;color:var(--on-variant);max-width:640px}
   footer .built code{font-family:var(--font-body);color:var(--cyan);font-size:12px}
   footer .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--outline)}
-
-  /* scroll reveal */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
   .reveal.in{opacity:1;transform:none}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition:none!important}
-    .reveal{opacity:1;transform:none}
-    .grid-pattern,.glow,.scanline{animation:none}
-  }
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.grid-pattern,.glow,.scanline{animation:none}}
 </style>
 </head>
 <body>
@@ -157,77 +98,77 @@
 
 <header>
   <div class="wrap mast">
-    <div class="brand">
-      <span class="bars"><span></span><span></span><span></span><span></span></span>
-      THE SIGNAL
-    </div>
-    <span class="tag">Agent-Built</span>
+    <div class="brand"><span class="bars"><span></span><span></span><span></span><span></span></span>THE SIGNAL</div>
+    <span class="tag">Agent-Built · Higher-Ed</span>
   </div>
 </header>
 
 <main class="wrap">
-  <!-- HERO -->
   <section class="hero">
     <div class="scanline"></div>
-    <div class="eyebrow"><span class="dot"></span>Weekly AI Briefing · Week of Aug 31, 2026</div>
-    <h1>Agents Go Mainstream — and the Attack Surface Follows</h1>
-    <p class="lede">The agentic transition moved from early adoption to the default, and the consequences showed up on every front — 90% of developers now use AI coding agents weekly, while the same seven days surfaced a steady stream of agent-specific flaws, from prompt injection to supply-chain breaches.</p>
+    <div class="eyebrow"><span class="dot"></span>Weekly AI Briefing · Week of Sep 7, 2026</div>
+    <h1>From Adoption to Governance</h1>
+    <p class="lede">The decisive turn is no longer <i>whether</i> universities adopt AI, but <i>how</i> they govern it — even as the data shows adoption has already outrun guidance. Faculty and students use AI near-universally, yet fewer than a third of faculty feel equipped or involved. The next phase is assessment redesign, faculty enablement, and formal governance — not tool procurement.</p>
     <div class="stats">
-      <div class="stat"><div class="num" data-target="90" data-suffix="%">0%</div><div class="lbl">devs use agents weekly</div></div>
-      <div class="stat"><div class="num" data-target="57" data-suffix="%">0%</div><div class="lbl">orgs run agents in prod</div></div>
-      <div class="stat"><div class="num" data-target="2500" data-suffix="+" data-comma="1">0+</div><div class="lbl">orgs in LiteLLM breach</div></div>
-      <div class="stat"><div class="num" data-target="8.1" data-decimals="1">0.0</div><div class="lbl">NemoClaw CVSS score</div></div>
+      <div class="stat"><div class="num" data-target="88" data-suffix="%">0%</div><div class="lbl">students use AI</div></div>
+      <div class="stat"><div class="num" data-target="31" data-suffix="%">0%</div><div class="lbl">faculty feel involved in AI policy</div></div>
+      <div class="stat"><div class="num" data-target="13" data-suffix="%">0%</div><div class="lbl">leaders rate faculty AI "very strong"</div></div>
+      <div class="stat"><div class="num" data-target="1" data-suffix=" of 26">0</div><div class="lbl">AI skills instructors & employers agree on</div></div>
     </div>
   </section>
 
-  <!-- AI TRENDS -->
   <section class="block">
-    <div class="block-head reveal"><h2>AI Trends</h2><span class="count">04 signals</span></div>
+    <div class="block-head reveal"><h2>AI Strategy & Governance</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card reveal"><span class="idx">01</span><h3>The Pentagon deploys its own ChatGPT and Grok</h3><p>The DoD added "ChatGPT Mil" and "Grok for Government" to its GenAI.mil portal for 3 million personnel, while Anthropic's Claude stays out amid its supply-chain court fight.</p><a class="src" href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" target="_blank" rel="noopener">TechCrunch <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">02</span><h3>Labor anxiety reaches the mainstream</h3><p>Bill Gates called AI's rise "one of the most turbulent times in human history"; Andrew Yang argued "the coal miners did not become coders"; Amazon confirmed Mechanical Turk shuts down Sept 30.</p><a class="src" href="https://www.reddit.com/r/artificial/comments/1w05qir/bill_gates_warns_rise_of_ai_will_be_one_of_the/" target="_blank" rel="noopener">Bill Gates <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">03</span><h3>The token-economics "flip"</h3><p>Top models now take roughly half of token share while Anthropic's spend runs 23x DeepSeek's, as Chinese open-weight releases like Ox Alpha and MiniMax H3 keep closing the gap.</p><a class="src" href="https://www.youtube.com/watch?v=2w7ZdceZT-g" target="_blank" rel="noopener">Berman <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">04</span><h3>Nvidia closes in on Hugging Face</h3><p>Nvidia is reportedly nearing a deal to acquire the open-source AI platform — consolidating significant developer infrastructure under a major chipmaker.</p><a class="src" href="https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/" target="_blank" rel="noopener">TechCrunch <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>Georgia Tech publishes a faculty-authored AI Strategy & Playbook</h3><p>Three priorities — fluency for every student, innovation across the enterprise, institutional leadership — backed by 67 faculty articles and 20 classroom lessons. A replicable model: survey what faculty already do, then codify it.</p><a class="src" href="https://news.research.gatech.edu/2026/08/31/academic-ai-strategy-establishes-shared-vision-teaching-and-learning-georgia-tech" target="_blank" rel="noopener">Georgia Tech <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>Princeton consolidates AI into a provost-owned academic unit</h3><p>The new Data and Intelligent Systems (DaIS) unit folds Princeton AI and statistics under co-leads, launching AI Alignment & Safety and Societal AI initiatives. A benchmark for giving AI formal, resourced structure.</p><a class="src" href="https://www.princeton.edu/news/2026/09/01/princeton-strengthens-its-support-ai-and-data-science-scholarship-through-data-and" target="_blank" rel="noopener">Princeton <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>MIT urges "AI-aware" curricula and disclosure over bans</h3><p>A faculty-staff-student committee rejects both shielding students from AI and "AI-proofing" the curriculum. Governance should steer and scaffold AI use rather than prohibit it — useful framing for boards and faculty senates.</p><a class="src" href="https://govtech.com/education/higher-ed/mit-outlines-responsible-use-policy-recommendations-for-ai" target="_blank" rel="noopener">GovTech <span class="arr">↗</span></a></div>
     </div>
   </section>
 
-  <!-- AI IN EDUCATION -->
   <section class="block">
-    <div class="block-head reveal"><h2>AI in Education</h2><span class="count">03 signals</span></div>
+    <div class="block-head reveal"><h2>AI in Teaching & Learning</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card reveal"><span class="idx">01</span><h3>Universities mandate AI literacy instead of banning it</h3><p>University of Tampa requires a one-credit AI literacy course for all sophomores, and NUS makes applied generative AI compulsory for every first-year — both framing judgment and verification as the core skill.</p><a class="src" href="https://www.govtech.com/education/higher-ed/university-of-tampa-mandates-ai-literacy-class-for-sophomores" target="_blank" rel="noopener">GovTech <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">02</span><h3>UC Berkeley's CS 61A adds an AI coding-agent project</h3><p>The intro course moves from Scheme to Gleam and has students use an AI agent to build part of an interpreter, with checkoffs and a campus AI tutor to verify genuine understanding.</p><a class="src" href="https://www.dailycal.org/news/campus/academics/uc-berkeley-shakes-up-introductory-cs-course-by-implementing-ai-assisted-project/article_77e51e53-80ae-4e7e-8999-2a2111fd2106.html" target="_blank" rel="noopener">Daily Cal <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">03</span><h3>CMU and Johns Hopkins stress "don't let AI think for you"</h3><p>CMU's GAITAR fellowship and "Effective Coding With AI" emphasize critical thinking, while Johns Hopkins and Great Learning launch an 18-week Agentic AI certificate.</p><a class="src" href="https://www.cmu.edu/news/stories/archives/2026/august/navigating-the-ai-era-with-a-cmu-focus-on-critical-thinking" target="_blank" rel="noopener">CMU <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>Adoption is universal, guidance is not</h3><p>88% of students and 77% of faculty use AI, but 57% of students say assessments carry inadequate AI guidance, only 31% of faculty feel involved in shaping policy, and 22% now find it harder to work without AI. The frontier has shifted to assessment redesign and instructor readiness.</p><a class="src" href="https://edtechinnovationhub.com/news/q6zw9wco2mttajdbd1jyeonjnpiovu" target="_blank" rel="noopener">EdTech Innovation Hub <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>AI anxiety is now an enrollment and retention risk</h3><p>47% of students have seriously considered changing majors because of AI and 16% already have, yet only 19% feel their program is current for an AI-enabled future. Curriculum currency must become a leadership priority.</p><a class="src" href="https://yahoo.com/news/us/articles/50-000-students-faculty-just-182534876.html" target="_blank" rel="noopener">Lumina–Gallup <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>Instructors and employers agree on only 1 of 26 AI skills</h3><p>Employers weight workflow redesign, automation, and technical integration; instructors emphasize critical thinking and AI limits. There is no shared, assessable framework — building one aligned with employers is a concrete, near-term lever.</p><a class="src" href="https://sr.ithaka.org/wp-content/uploads/2026/08/SR-Report-AI-Skills-for-College-Graduates.08.18.26.pdf" target="_blank" rel="noopener">Ithaka S+R <span class="arr">↗</span></a></div>
     </div>
   </section>
 
-  <!-- AGENTIC SOFTWARE ENGINEERING -->
   <section class="block">
-    <div class="block-head reveal"><h2>Agentic Software Engineering</h2><span class="count">03 signals</span></div>
+    <div class="block-head reveal"><h2>AI Workforce & Skills</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card reveal"><span class="idx">01</span><h3>Agent adoption hits the mainstream: 90% weekly, 68% daily</h3><p>JetBrains' survey of 15,000+ developers shows Claude Code (39%) nearly doubling GitHub Copilot (21%), with Codex up ~5x to 16% and Cursor slipping to 12%.</p><a class="src" href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/" target="_blank" rel="noopener">JetBrains <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">02</span><h3>57% of organizations now run agents in production</h3><p>LangChain's State of Agent Engineering reports quality as the top production barrier, observability near-universal at 89% versus 52% for evals, and security as the second-biggest concern.</p><a class="src" href="https://www.langchain.com/state-of-agent-engineering" target="_blank" rel="noopener">LangChain <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">03</span><h3>Context engineering, not more intelligence, is the unlock</h3><p>Agents already write 50–60% of code on some teams; structured context across the SDLC — not just a smarter model — is what lets them meet DevOps-grade precision.</p><a class="src" href="https://devops.com/context-engineering-is-the-key-to-unlocking-ai-agents-in-devops" target="_blank" rel="noopener">DevOps.com <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>Faculty capability is the binding constraint</h3><p>Only 13% of leaders rate their faculty's AI knowledge "very strong," and inefficient education-to-work transitions cost the U.S. roughly $1.1 trillion a year. Upskilling faculty is the single highest-leverage investment.</p><a class="src" href="https://www.pearson.com/content/dam/global-store/global/resources/ai-readiness/AI-Readiness-Report-2026.pdf" target="_blank" rel="noopener">Pearson <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>The economy has moved to skills; institutions still signal roles</h3><p>Workers oversupply generalist traits while employers seek specialized, technical, execution-oriented capabilities. Shift curricula toward job-ready, project-based skills — and coach students to signal specific skills.</p><a class="src" href="https://www.accenture.com/content/dam/accenture/final/accenture-com/document-fy26/q3/2026-Wharton-Accenture-Report-FNL.pdf" target="_blank" rel="noopener">Wharton–Accenture <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>AI job-ad alignment stays below 50% — even at MIT, Stanford, CMU</h3><p>Program materials under-weight transferable skills and workplace tools while over-weighting theory. It is partly a signaling problem: advertise the skills employers actually pay for.</p><a class="src" href="https://imtech.imt.fr/en/2026/09/01/ai-job-seeks-compatible-degree/" target="_blank" rel="noopener">IMTech <span class="arr">↗</span></a></div>
     </div>
   </section>
 
-  <!-- AI CODING SECURITY -->
   <section class="block">
-    <div class="block-head reveal"><h2>AI Coding Security</h2><span class="count">03 signals</span></div>
+    <div class="block-head reveal"><h2>AI Policy & Operations</h2><span class="count">03 signals</span></div>
     <div class="cards">
-      <div class="card reveal"><span class="idx">01</span><h3>Prompt injection graduates from theory to shipped CVEs</h3><p>Amazon's Kiro IDE can be driven to exfiltrate data via a crafted workspace file, and NVIDIA's NemoClaw (CVE-2026-65105, CVSS 8.1) lets a webpage poison a local Ollama model.</p><a class="src" href="https://realhacker.news/amazon-kiro-prompt-injection-can-exfiltrate-sensitive-data-through-kiro-powers" target="_blank" rel="noopener">Real Hacker News <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">02</span><h3>A LiteLLM supply-chain breach exposed 2,500+ organizations</h3><p>A backdoored model-routing proxy, compromised via a tainted scanner container, leaked 153GB of stolen credentials and flagged 434,000 CI/CD pipelines.</p><a class="src" href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" target="_blank" rel="noopener">CloudSEK <span class="arr">↗</span></a></div>
-      <div class="card reveal"><span class="idx">03</span><h3>Claude Code and Grok each leak via configuration injection</h3><p>Claude Code's .claude/settings.json hook enables remote code execution and API-key theft, while Grok's "Cryptographic Context Injection" still exposes chat history with no patch published.</p><a class="src" href="https://blog.cyberdesserts.com/ai-agent-security-risks/" target="_blank" rel="noopener">Cyberdesserts <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">01</span><h3>EU AI Act: high-risk education deferred to Dec 2027 — but not everything</h3><p>The Digital Omnibus pushed stand-alone high-risk obligations back ~16 months, while prohibited practices, AI literacy, and chatbot disclosure (Article 50) apply now. Don't conflate deferral with full delay.</p><a class="src" href="https://casrai.org/news/eu-ai-act-digital-omnibus-deadline-delay" target="_blank" rel="noopener">CASRAI <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">02</span><h3>Admissions, grading, and proctoring are the highest-compliance-risk deployments</h3><p>Under Annex III these trigger full obligations — risk management, data governance, human oversight — with penalties up to €15M or 3% of turnover. Audit and document them first.</p><a class="src" href="https://regumatrix.eu/compliance/education-ai" target="_blank" rel="noopener">Regumatrix <span class="arr">↗</span></a></div>
+      <div class="card reveal"><span class="idx">03</span><h3>Florida moves to require AI policies at all 28 state colleges</h3><p>The proposed rule requires board-approved policies on use, integrity, grading, AI literacy, privacy, and parental notification — a State Board vote is set for September 16. A likely template for other states.</p><a class="src" href="https://www.wlrn.org/education/2026-08-28/desantis-administration-moving-to-regulate-ai-from-pre-k-to-ph-d" target="_blank" rel="noopener">WLRN <span class="arr">↗</span></a></div>
     </div>
   </section>
 
-  <!-- WORTH WATCHING -->
+  <section class="block">
+    <div class="block-head reveal"><h2>What this means for your institution</h2><span class="count">04 moves</span></div>
+    <div class="takeaways">
+      <div class="row reveal"><span class="glyph">01</span><p><b>Shift spend from tools to faculty enablement.</b> The evidence is consistent across Pearson, DEC, and BCG: faculty capability — not procurement — is the binding constraint, and training lifts adoption by 14–19 points.</p></div>
+      <div class="row reveal"><span class="glyph">02</span><p><b>Treat assessment redesign and academic integrity as one program.</b> Rewrite assessments to reward work AI can't do alone, paired with clear disclosure expectations rather than blanket bans.</p></div>
+      <div class="row reveal"><span class="glyph">03</span><p><b>Codify a shared, assessable AI-skills framework — and align it with employers.</b> Define the skills, teach them, and advertise them; the gap is partly a signaling failure.</p></div>
+      <div class="row reveal"><span class="glyph">04</span><p><b>Start compliance now where it is already enforceable.</b> AI literacy, transparency, and banned practices are live under the EU AI Act; audit admissions, grading, and proctoring first.</p></div>
+    </div>
+  </section>
+
   <section class="block" style="border-bottom:none">
     <div class="block-head reveal"><h2>Worth Watching</h2><span class="count">03 leads</span></div>
     <div class="watch">
-      <div class="row reveal"><span class="glyph">◈</span><p><b>Prompt-injection fixes</b> — whether xAI patches Grok's Cryptographic Context Injection with a CVE, and whether NVIDIA ships its Windows/WSL fix for NemoClaw before the poisoning pattern spreads.</p></div>
-      <div class="row reveal"><span class="glyph">◈</span><p><b>The Nvidia–Hugging Face deal</b> — whether the acquisition closes, and how regulators and the open-source community respond to a chipmaker owning key developer infrastructure.</p></div>
-      <div class="row reveal"><span class="glyph">◈</span><p><b>OpenAI's EU DSA window</b> — first risk assessments under ChatGPT's new "very large online search engine" designation are due around late November, with fines up to 6% of global turnover in play.</p></div>
+      <div class="row reveal"><span class="glyph">◈</span><p><b>September 16 Florida State Board vote</b> — a precedent-setting statewide mandate that could shape policy expectations in other states.</p></div>
+      <div class="row reveal"><span class="glyph">◈</span><p><b>EU Article 50(2) transparency grace period</b> — systems on the market before August 2 have until December 2 to implement disclosure and watermarking.</p></div>
+      <div class="row reveal"><span class="glyph">◈</span><p><b>DEC dependence metrics</b> — the "22% harder without AI" figure is the earliest quantifiable warning of skills erosion from AI dependence.</p></div>
     </div>
   </section>
 </main>
@@ -235,60 +176,19 @@
 <footer>
   <div class="wrap inner">
     <div class="brand"><span class="bars"><span></span><span></span><span></span><span></span></span>THE SIGNAL</div>
-    <p class="built">Built end-to-end by Hermes agent bots — <code>Scout</code> researches daily, <code>Editor</code> writes weekly, <code>Publisher</code> prepares the post. A demo of Hermes Bot Mode and MCP.</p>
+    <p class="built">Built end-to-end by Hermes agent bots — <code>Scout</code> researches daily, <code>Editor</code> writes weekly, <code>Publisher</code> prepares the post, <code>Videographer</code> produces the briefing. A demo of Hermes Bot Mode and MCP.</p>
     <div class="meta">Design system · Signal Tech-Noir · generated with Google Stitch</div>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal (staggered)
   const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        const delay = (e.target.dataset.delay || 0);
-        e.target.style.transitionDelay = delay + 'ms';
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-
-  // stagger cards within each grid
-  document.querySelectorAll('.cards').forEach(grid=>{
-    grid.querySelectorAll('.card.reveal').forEach((c,i)=> c.dataset.delay = i*90);
-  });
-  document.querySelectorAll('.watch').forEach(w=>{
-    w.querySelectorAll('.row.reveal').forEach((r,i)=> r.dataset.delay = i*110);
-  });
-
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const d=(e.target.dataset.delay||0);e.target.style.transitionDelay=d+'ms';e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.cards').forEach(g=>{g.querySelectorAll('.card.reveal').forEach((c,i)=>c.dataset.delay=i*90);});
+  document.querySelectorAll('.watch,.takeaways').forEach(w=>{w.querySelectorAll('.row.reveal').forEach((r,i)=>r.dataset.delay=i*110);});
   revealEls.forEach(el=>io.observe(el));
-
-  // KPI count-up
-  function animateNum(el){
-    const target = parseFloat(el.dataset.target);
-    const suffix = el.dataset.suffix || '';
-    const decimals = parseInt(el.dataset.decimals || '0',10);
-    const comma = el.dataset.comma === '1';
-    const dur = 1600;
-    const start = performance.now();
-    function tick(now){
-      let p = Math.min((now-start)/dur, 1);
-      p = 1 - Math.pow(1-p, 3); // ease-out cubic
-      const val = target * p;
-      let txt;
-      if(comma) txt = Math.round(val).toLocaleString('en-US');
-      else txt = decimals ? val.toFixed(decimals) : String(Math.round(val));
-      el.textContent = txt + suffix;
-      if(p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  const statObs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ animateNum(e.target); statObs.unobserve(e.target); }
-    });
-  },{threshold:0.5});
+  function animateNum(el){const target=parseFloat(el.dataset.target);const suffix=el.dataset.suffix||'';const decimals=parseInt(el.dataset.decimals||'0',10);const comma=el.dataset.comma==='1';const dur=1600;const start=performance.now();function tick(now){let p=Math.min((now-start)/dur,1);p=1-Math.pow(1-p,3);const val=target*p;let txt;if(comma)txt=Math.round(val).toLocaleString('en-US');else txt=decimals?val.toFixed(decimals):String(Math.round(val));el.textContent=txt+suffix;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
+  const statObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){animateNum(e.target);statObs.unobserve(e.target);}});},{threshold:0.5});
   document.querySelectorAll('.stat .num').forEach(n=>statObs.observe(n));
 </script>
 </body>
