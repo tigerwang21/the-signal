@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE SIGNAL - Weekly AI Briefing</title>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="The Signal — Universal Access Arrives. Governance Must Catch Up."/>
+<meta property="og:description" content="A weekly AI strategy briefing for UK higher-education leadership, built end-to-end by Hermes agent bots."/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#00006e",
+                      "on-background": "#1a1c19",
+                      "secondary-fixed": "#e0e0ff",
+                      "surface-container-high": "#e8e8e3",
+                      "on-primary-fixed-variant": "#474747",
+                      "outline": "#7e7576",
+                      "on-surface": "#1a1c19",
+                      "surface-dim": "#dadad5",
+                      "secondary-container": "#080cff",
+                      "surface-bright": "#fafaf4",
+                      "on-secondary-container": "#b6baff",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#0000ef",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "secondary": "#0001c0",
+                      "surface-variant": "#e3e3dd",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-primary-fixed": "#1b1b1b",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-container-highest": "#e3e3dd",
+                      "inverse-surface": "#2f312d",
+                      "primary-container": "#1b1b1b",
+                      "on-error-container": "#93000a",
+                      "primary": "#000000",
+                      "surface-container-low": "#f4f4ee",
+                      "tertiary-fixed": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#1b1b1b",
+                      "on-surface-variant": "#4c4546",
+                      "inverse-on-surface": "#f1f1eb",
+                      "surface-container": "#eeeee8",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#848484",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#000000",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#e2e2e2",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#848484",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "background": "#fafaf4",
+                      "surface-tint": "#5e5e5e",
+                      "secondary-fixed-dim": "#bec2ff",
+                      "outline-variant": "#cfc4c5",
+                      "surface": "#fafaf4",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "0px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "gutter": "20px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "display": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "metadata": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "metadata": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .brutal-border {
+            border: 2px solid theme('colors.primary');
+        }
+
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px theme('colors.primary');
+        }
+
+        .brutal-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px theme('colors.primary');
+            transform: translate(-4px, -4px);
+            transition: all 0.1s ease-in-out;
+        }
+
+        .brutal-card {
+            background-color: theme('colors.surface-bright');
+            border: 2px solid theme('colors.primary');
+        }
+
+        .stamp { animation: stampIn .55s cubic-bezier(.2,.7,.3,1) both; }
+        @keyframes stampIn { 0% { opacity:0; transform: scale(1.14) rotate(-1.2deg); } 100% { opacity:1; transform: scale(1) rotate(0); } }
+        .reveal { opacity:0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+        .reveal.in { opacity:1; transform:none; }
+        .cursor { animation: blink 1s step-end infinite; }
+        @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+        @media (prefers-reduced-motion: reduce){ .stamp,.cursor,.reveal{ animation:none!important; transition:none!important } .reveal{ opacity:1; transform:none } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+
+<!-- Archive Notice Banner -->
+<div class="bg-primary text-on-primary px-md py-xs font-metadata text-label-sm font-bold flex justify-between items-center sticky top-0 z-[60] border-b-2 border-primary">
+  <div class="flex items-center gap-xs">
+    <span class="material-symbols-outlined text-[16px]">history</span>
+    <span>ARCHIVED DISPATCH // ISSUE 07/09/2026 // Universal Access Arrives</span>
+  </div>
+  <a href="../index.html" class="bg-surface-bright text-primary px-2 py-0.5 hover:bg-secondary hover:text-on-secondary transition-colors uppercase font-bold text-[11px] border border-primary flex items-center gap-xs">
+    <span>← LATEST ISSUE</span>
+  </a>
+</div>
+
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-md py-sm border-b-2 border-primary bg-surface top-0 z-50 sticky">
+<div class="flex items-center gap-gutter">
+<span class="font-display text-headline-lg font-black uppercase tracking-tighter text-on-surface">THE SIGNAL</span>
+<div class="hidden md:flex gap-md ml-xl font-metadata text-metadata">
+<span class="text-primary font-bold">WEEKLY AI BRIEFING</span>
+<span class="text-on-surface-variant font-medium">ISSUE NO. 07/09/2026</span>
+<span class="text-on-surface-variant font-medium">DATE: 07/09/2026</span>
+</div>
+</div>
+<div class="flex gap-md text-primary">
+<a href="index.html" title="Archive Directory" target="_blank" rel="noopener" class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-1 border-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">archive</span>
+</a>
+<button class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-1 border-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 flex-col md:flex-row">
+<!-- SideNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col h-[calc(100vh-68px)] w-64 border-r-2 border-primary bg-surface sticky top-[68px] z-40 shrink-0">
+<div class="p-md border-b-2 border-primary">
+<button class="w-full py-sm px-md brutal-border brutal-shadow-hover bg-surface-bright font-metadata text-metadata font-bold uppercase text-primary">NEW BRIEFING</button>
+</div>
+<div class="flex-1 overflow-y-auto flex flex-col">
+<a class="bg-secondary text-on-secondary font-bold border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#strategy">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-metadata text-label-sm uppercase">01 STRATEGY</span>
+</a>
+<a class="text-on-surface font-medium border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#teaching">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">school</span>
+<span class="font-metadata text-label-sm uppercase">02 TEACHING</span>
+</a>
+<a class="text-on-surface font-medium border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#workforce">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
+<span class="font-metadata text-label-sm uppercase">03 WORKFORCE</span>
+</a>
+<a class="text-on-surface font-medium border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#policy">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">policy</span>
+<span class="font-metadata text-label-sm uppercase">04 POLICY</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter content-start">
+<!-- Hero -->
+<div class="col-span-1 lg:col-span-12 mb-xl border-b-2 border-primary pb-xl">
+<h1 class="font-display text-display font-black text-primary uppercase tracking-tighter max-w-4xl stamp">Universal Access Arrives. Governance Must Catch Up.</h1>
+<p class="font-metadata text-metadata text-on-surface-variant mt-sm">FILE REF: TX-07/09/2026 // SECTOR: UK HIGHER EDUCATION // STATUS: AGENT-COMPILED</p>
+<p class="inline-block font-metadata text-label-sm font-bold uppercase bg-secondary text-on-secondary px-md py-sm mt-md">BUILT BY AI AGENTS — HERMES AGENT BOTS + GEMINI NOTEBOOK</p>
+</div>
+<!-- Intelligence Metrics -->
+<div class="col-span-1 lg:col-span-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter mb-xl">
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="94" data-suffix="%">0%</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">UK undergraduates using AI in assessed work</span></div>
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="65000">0</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">Staff &amp; students on universal Copilot at Manchester</span></div>
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="600" data-suffix="+">0+</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">Chinese universities running AI degree programmes</span></div>
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="37" data-suffix="%">0%</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">AI expert roles requiring a PhD</span></div>
+</div>
+<!-- Content Area Left -->
+<div class="col-span-1 lg:col-span-8 flex flex-col gap-xl">
+<!-- Section 01 -->
+<section id="strategy" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-secondary text-on-secondary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI Strategy &amp; Governance</h3>
+<span class="font-metadata text-label-sm font-bold">01</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Manchester &amp; Leicester make campus-wide Copilot the UK default</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Manchester's world-first gives all 65,000 staff and students full Copilot access and training; Leicester follows as a Microsoft Frontier university from September. Universal single-vendor access is now the benchmark — the real decision is vendor consolidation and governance, not adoption.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.manchester.ac.uk/about/news/world-first-ai-partnership-between-the-university-of-manchester-and-microsoft-announced/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: MANCHESTER ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Roehampton picks Google Gemini — a second vendor lands at scale</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Every student and staff member gains governed Gemini for Education access, Moodle-integrated, with customer data kept out of model training. A two-vendor market is forming — weigh lock-in, data-residency and tool integration rather than defaulting to one ecosystem.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://study-in-uk.com/blog/university-of-roehampton-introduces-google-gemini-for-education-to-strengthen-student-success-and-career-readiness/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: ROEHAMPTON / STUDY IN UK ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Oxford-led BOLD lab launches a national open-science AI model</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Five Oxford/UCL/Imperial groups unite in one shared-infrastructure lab with NVIDIA/AMD/UKRI backing, moving beyond single-PI fragmentation. Frontier AI research is reorganising into pooled, industrially-paced labs — decide whether to pool with pre-negotiated IP and compute.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://eng.ox.ac.uk/news/british-open-ended-learning-and-discovery-lab-festival-launches" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: OXFORD ENGINEERING ↗</a></article>
+<article class="p-md bg-secondary-fixed border-l-4 border-secondary">
+<div class="font-metadata text-label-sm font-bold text-secondary uppercase mb-sm">★ Featured · China</div>
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">China cuts 12,200 programmes, reallocating toward AI majors</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">600+ universities now run AI undergraduate programmes — up from 35 in 2018 — as the state treats degree-portfolio composition as industrial policy. A benchmark, and a recruitment-competitiveness signal, for UK institutions rebalancing subject mixes.</p>
+<a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.forbes.com/sites/annaesakismith/2026/06/23/china-cuts-12200-university-programs-replaces-many-with-ai-degrees/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: FORBES (CHINA) ↗</a>
+</article>
+</div>
+</section>
+<!-- Section 02 -->
+<section id="teaching" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-surface text-primary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI in Teaching &amp; Learning</h3>
+<span class="font-metadata text-label-sm font-bold">02</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Manchester's four-category assessment policy takes effect</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Every assessment is tagged AI-Prohibited / -Minimal / -Permitted / -Integrated, stated on the brief, with only the university Copilot able to touch student-identifiable data. A ready-to-adapt taxonomy that operationalises AI policy into everyday practice.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://documents.manchester.ac.uk/display.aspx?DocID=79331" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: MANCHESTER ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">94% of UK undergraduates use AI in assessed work</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">HEPI's survey of 1,054 students (reported in Nature) makes near-universal AI use an empirical fact, with 12% inserting AI text directly. The question has moved from "permit AI?" to "how do we assess learning when AI is ubiquitous?" — redesign, not detection.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://go.nature.com/3UmuNMu" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: HEPI / NATURE ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Only 28% of students say assessments match AI-era work</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">DEC's 45,398-respondent, 35-country survey also finds 60% worry peers misuse AI unfairly, and US/Canada faculty adoption intent is falling. A measurable assessment–workplace misalignment eroding degree value — audit portfolios against future-work skills.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.digitaleducationcouncil.com/resource-library-items/ai-in-higher-education-global-survey-2026" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: DIGITAL EDUCATION COUNCIL ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">King's College London VC: "rethink the essence of learning"</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Shitij Kapur urges a shift from knowledge-delivery to experiential learning — judgement, collaboration, problem-solving — and treats AI as a tool to be learned, not an integrity threat. A leadership reframe from policing AI to redefining what assessment is for.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://koreatimes.co.kr/southkorea/education/k-universities/campus/20260902/kings-calls-on-universities-to-rethink-essence-of-learning-in-ai-era" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: KOREA TIMES ↗</a></article>
+</div>
+</section>
+<!-- Section 03 -->
+<section id="workforce" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-surface text-primary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI Workforce &amp; Skills</h3>
+<span class="font-metadata text-label-sm font-bold">03</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">37% of AI expert roles require a PhD — skills too concentrated</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">DSIT finds virtually all AI expert roles need at least a Bachelor's, driving a regional and SME divide in AI access. Universities are the main AI-talent supplier, but must widen alternative, shorter pathways alongside degrees.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.gov.uk/government/publications/ai-skills-for-life-and-work-summary-report/ai-skills-for-life-and-work-summary-report--2" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: GOV.UK / DSIT ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Imperial rolls out stackable "AI for the Workplace" training</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Taught by academics and industry with tailored modules, it pairs a new AI Strategy Committee with a named in-house upskilling vehicle. A model that treats staff AI capability as an institutional asset, distinct from student provision.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.imperial.ac.uk/about/leadership-and-strategy/president/writing-and-speeches/messages-to-the-imperial-community-/growing-ai-ambition/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: IMPERIAL ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">US: AI competency becomes a graduation requirement</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Purdue and Ohio State mandate AI fluency for all students, while 35% of US hiring managers plan to hire fewer graduates in 2026. A signal for UK institutions weighing whether to make AI literacy a formal graduate attribute.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.cnbc.com/2026/05/18/ai-workforce-college-jobs.html" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: CNBC (US) ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Huddersfield launches "AI-Ready Yorkshire" for SMEs</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The regional programme connects small businesses to academic AI capability. A civic-AI template — deploy institutional AI into the local economy for CPD and partnership income while closing the SME skills gap.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.hud.ac.uk/news/2026/september/ai-ready-yorkshire-connect-business-uni-expertise/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: HUDDERSFIELD ↗</a></article>
+</div>
+</section>
+<!-- Section 04 -->
+<section id="policy" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-surface text-primary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI Policy &amp; Operations</h3>
+<span class="font-metadata text-label-sm font-bold">04</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">A statutory ICO Code of Practice on AI &amp; ADM is coming</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Regulations 2026 No. 425 direct the ICO to produce a code on personal data in AI and automated decisions. Feed into the consultation and align your ADM governance — DPIA, human oversight, contestability — ahead of enforcement.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="http://legislation.gov.uk/uksi/2026/425/pdfs/uksiem_20260425_en_001.pdf" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: LEGISLATION.GOV.UK ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">EU AI Act transparency duties are enforceable now</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">From 2 August, universities must label AI chatbots and disclose AI-generated content; high-risk education rules remain deferred to December 2027. Label and document now, and build oversight for admissions, grading and proctoring.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://ki-campus.eu/en/ki-governance-en/eu-ai-act-universities/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: KI-CAMPUS (EU) ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Agentic AI moves operations from chatbots to governed workflows</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The agentic university stacks recruitment concierges, Socratic tutors, predictive intervention and back-office agents. Run agent-readiness audits and require human approval before agents touch consequential decisions.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://upcea.edu/the-rise-of-the-agentic-ai-university-in-2026" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: UPCEA ↗</a></article>
+<article class="p-md"><h4 class="font-display text-headline-md font-bold text-primary mb-sm">UK universities back DSIT's AI for Science Strategy</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Institutions commit to AI-methods training, conversion courses and research fellowships. Government is anchoring national AI-for-science delivery in universities — map your offer to the strategy's asks to secure funding and policy influence.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.gov.uk/government/publications/ai-for-science-strategy-uk-universities-joint-statement/ai-for-science-strategy-uk-universities-joint-statement" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: GOV.UK ↗</a></article>
+</div>
+</section>
+</div>
+<!-- Content Area Right (Sidebar) -->
+<div class="col-span-1 lg:col-span-4 flex flex-col gap-gutter">
+<!-- Summary Box -->
+<aside id="actions" class="brutal-border bg-surface-bright brutal-shadow p-0 reveal scroll-mt-24">
+<div class="bg-[#0000FF] text-white p-md border-b-2 border-primary">
+<h4 class="font-display text-headline-md font-bold uppercase">Action Required</h4>
+</div>
+<div class="p-md font-body-md text-body-md">
+<p class="mb-md"><strong>What this means for your institution:</strong></p>
+<ul class="list-none space-y-sm font-metadata text-metadata">
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span>Treat <b class="text-primary">vendor consolidation as the strategic decision</b> — negotiate switching costs, data-residency and exit terms before peers lock in.</span></li>
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span>Operationalise <b class="text-primary">assessment categorisation</b> — adopt or adapt Manchester's four-tier model.</span></li>
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span>Upskill staff as the <b class="text-primary">binding constraint</b> — capability, not tool access, determines graduate AI-readiness.</span></li>
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span>Act now on the <b class="text-primary">compliance already enforceable</b> — EU transparency applies today; feed into the ICO code consultation.</span></li>
+</ul>
+</div>
+</aside>
+<!-- Video Block -->
+<div id="video" class="brutal-border bg-surface-bright brutal-shadow p-0 flex flex-col reveal scroll-mt-24">
+<div class="border-b-2 border-primary p-sm font-metadata text-label-sm font-bold uppercase flex justify-between items-center bg-surface-variant">
+<span>Watch the briefing</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="aspect-video w-full bg-black relative border-b-2 border-primary">
+<video controls preload="none" class="w-full h-full object-contain" poster="media/infographic.png" src="../media/video.mp4"></video>
+</div>
+<div class="p-sm font-metadata text-label-sm bg-surface-bright text-on-surface-variant">
+VIDEO OVERVIEW // 18 MB // GENERATED BY GEMINI NOTEBOOK
+</div>
+</div>
+<!-- Audio Block -->
+<div class="brutal-border bg-surface-bright brutal-shadow p-0 flex flex-col reveal scroll-mt-24">
+<div class="border-b-2 border-primary p-sm font-metadata text-label-sm font-bold uppercase flex justify-between items-center bg-surface-variant">
+<span>Listen: Audio Overview</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">headphones</span>
+</div>
+<div class="p-md">
+<audio controls preload="none" class="w-full" src="../media/audio.m4a"></audio>
+</div>
+<div class="p-sm font-metadata text-label-sm bg-surface-bright text-on-surface-variant">
+AUDIO OVERVIEW // 42 MB // GENERATED BY GEMINI NOTEBOOK
+</div>
+</div>
+</div>
+<!-- Bottom Links -->
+<div class="col-span-1 lg:col-span-12 mt-xl border-t-2 border-primary pt-xl reveal">
+<h4 class="font-display text-headline-md font-bold uppercase mb-md text-primary">Worth Watching</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<a class="brutal-border p-md hover:bg-surface-variant transition-colors flex items-center justify-between group" href="https://study-in-uk.com/blog/university-of-roehampton-introduces-google-gemini-for-education-to-strengthen-student-success-and-career-readiness/" target="_blank" rel="noopener">
+<span class="font-metadata text-metadata font-bold uppercase">Roehampton's Gemini rollout — first two-vendor test</span>
+<span class="material-symbols-outlined text-primary transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+<a class="brutal-border p-md hover:bg-surface-variant transition-colors flex items-center justify-between group" href="http://legislation.gov.uk/uksi/2026/425/pdfs/uksiem_20260425_en_001.pdf" target="_blank" rel="noopener">
+<span class="font-metadata text-metadata font-bold uppercase">ICO's Code of Practice consultation</span>
+<span class="material-symbols-outlined text-primary transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+<a class="brutal-border p-md hover:bg-surface-variant transition-colors flex items-center justify-between group" href="https://casrai.org/news/eu-ai-act-digital-omnibus-deadline-delay" target="_blank" rel="noopener">
+<span class="font-metadata text-metadata font-bold uppercase">EU watermarking grace period — 2 Dec 2026</span>
+<span class="material-symbols-outlined text-primary transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="flex flex-col px-md py-lg w-full bg-surface border-t-2 border-primary mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="font-metadata text-label-sm font-bold">©2026 SIGNAL · BUILT BY AI AGENTS — HERMES BOTS + GEMINI NOTEBOOK</span>
+<div class="flex gap-lg font-metadata text-label-sm">
+<a class="text-on-surface-variant hover:text-primary hover:underline focus:ring-2 focus:ring-primary outline-none" href="#">PRIVACY.LOG</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline focus:ring-2 focus:ring-primary outline-none" href="#">TERMS.MD</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline focus:ring-2 focus:ring-primary outline-none" href="#">CONTACT.SH</a>
+</div>
+</div>
+<div class="font-metadata text-label-sm text-on-surface-variant border-t-2 border-primary mt-md pt-sm">
+PROVENANCE: VIDEO, AUDIO &amp; INFOGRAPHIC GENERATED BY GEMINI NOTEBOOK (NOTEBOOKLM) — NOTEBOOK "THE SIGNAL" · e995f8c6-6c64-446e-a485-4dbbe9d7c5cb · 2026-09-05
+</div>
+</footer>
+<script>
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function animateNum(el){const t=parseFloat(el.dataset.target);const s=el.dataset.suffix||'';const dur=1200;const st=performance.now();function tick(n){let p=Math.min((n-st)/dur,1);p=1-Math.pow(1-p,3);let v=Math.round(t*p);el.textContent=(v>=1000?v.toLocaleString('en-GB'):v)+s;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
+  const so=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateNum(e.target);so.unobserve(e.target);}});},{threshold:.5});
+  document.querySelectorAll('.num').forEach(n=>so.observe(n));
+</script>
+</body></html>
