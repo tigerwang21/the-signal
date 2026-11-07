@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE SIGNAL: The Meter and the Clause - Week of 02/11/2026</title>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="The Signal: The Meter and the Clause (Week of 02/11/2026)" />
+<meta property="og:description" content="A weekly AI strategy briefing for UK higher-education leadership, built end-to-end by Hermes agent bots."/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#00006e",
+                      "on-background": "#1a1c19",
+                      "secondary-fixed": "#e0e0ff",
+                      "surface-container-high": "#e8e8e3",
+                      "on-primary-fixed-variant": "#474747",
+                      "outline": "#7e7576",
+                      "on-surface": "#1a1c19",
+                      "surface-dim": "#dadad5",
+                      "secondary-container": "#080cff",
+                      "surface-bright": "#fafaf4",
+                      "on-secondary-container": "#b6baff",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#0000ef",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "secondary": "#0001c0",
+                      "surface-variant": "#e3e3dd",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-primary-fixed": "#1b1b1b",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-container-highest": "#e3e3dd",
+                      "inverse-surface": "#2f312d",
+                      "primary-container": "#1b1b1b",
+                      "on-error-container": "#93000a",
+                      "primary": "#000000",
+                      "surface-container-low": "#f4f4ee",
+                      "tertiary-fixed": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#1b1b1b",
+                      "on-surface-variant": "#4c4546",
+                      "inverse-on-surface": "#f1f1eb",
+                      "surface-container": "#eeeee8",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#848484",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#000000",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#e2e2e2",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#848484",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "background": "#fafaf4",
+                      "surface-tint": "#5e5e5e",
+                      "secondary-fixed-dim": "#bec2ff",
+                      "outline-variant": "#cfc4c5",
+                      "surface": "#fafaf4",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "0px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "gutter": "20px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "display": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "metadata": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "metadata": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .brutal-border {
+            border: 2px solid theme('colors.primary');
+        }
+
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px theme('colors.primary');
+        }
+
+        .brutal-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px theme('colors.primary');
+            transform: translate(-4px, -4px);
+            transition: all 0.1s ease-in-out;
+        }
+
+        .brutal-card {
+            background-color: theme('colors.surface-bright');
+            border: 2px solid theme('colors.primary');
+        }
+
+        .stamp { animation: stampIn .55s cubic-bezier(.2,.7,.3,1) both; }
+        @keyframes stampIn { 0% { opacity:0; transform: scale(1.14) rotate(-1.2deg); } 100% { opacity:1; transform: scale(1) rotate(0); } }
+        .reveal { opacity:0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+        .reveal.in { opacity:1; transform:none; }
+        .cursor { animation: blink 1s step-end infinite; }
+        @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+        @media (prefers-reduced-motion: reduce){ .stamp,.cursor,.reveal{ animation:none!important; transition:none!important } .reveal{ opacity:1; transform:none } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-md py-sm border-b-2 border-primary bg-surface top-0 z-50 sticky">
+<div class="flex items-center gap-gutter">
+<span class="font-display text-headline-lg font-black uppercase tracking-tighter text-on-surface">THE SIGNAL</span>
+<div class="hidden md:flex gap-md ml-xl font-metadata text-metadata">
+<span class="text-primary font-bold">WEEKLY AI BRIEFING</span>
+<span class="text-on-surface-variant font-medium">ISSUE NO. 02/11/2026</span>
+<span class="text-on-surface-variant font-medium">DATE: 02/11/2026</span>
+</div>
+</div>
+<div class="flex gap-md text-primary">
+<button id="archive-toggle-btn" onclick="toggleArchive()" title="Browse Past Issues" class="hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 border-2 border-primary flex items-center gap-xs cursor-pointer">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">archive</span>
+<span class="hidden sm:inline font-metadata text-label-sm uppercase font-bold">ARCHIVE</span>
+</button>
+<button class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-1 border-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 flex-col md:flex-row">
+<!-- SideNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col h-[calc(100vh-68px)] w-64 border-r-2 border-primary bg-surface sticky top-[68px] z-40 shrink-0">
+<div class="p-md border-b-2 border-primary">
+<button class="w-full py-sm px-md brutal-border brutal-shadow-hover bg-surface-bright font-metadata text-metadata font-bold uppercase text-primary">NEW BRIEFING</button>
+</div>
+<div class="flex-1 overflow-y-auto flex flex-col">
+<a class="bg-secondary text-on-secondary font-bold border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#strategy">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-metadata text-label-sm uppercase">01 STRATEGY</span>
+</a>
+<a class="text-on-surface font-medium border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#teaching">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">school</span>
+<span class="font-metadata text-label-sm uppercase">02 TEACHING</span>
+</a>
+<a class="text-on-surface font-medium border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#workforce">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
+<span class="font-metadata text-label-sm uppercase">03 WORKFORCE</span>
+</a>
+<a class="text-on-surface font-medium border-b-2 border-primary p-md flex items-center gap-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors" href="#policy">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">policy</span>
+<span class="font-metadata text-label-sm uppercase">04 POLICY</span>
+</a>
+</div>
+<div class="p-md border-t-2 border-primary mt-auto bg-surface-variant">
+<button onclick="toggleArchive()" class="w-full text-left p-sm font-metadata text-label-sm font-bold uppercase text-primary hover:bg-secondary hover:text-on-secondary transition-colors flex items-center justify-between group brutal-border bg-surface-bright cursor-pointer">
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span>PAST ISSUES</span>
+</span>
+<span class="bg-primary text-on-primary group-hover:bg-on-secondary group-hover:text-secondary px-1.5 py-0.2 text-[10px] font-mono">10 EDITIONS</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter content-start">
+<!-- Hero -->
+<div class="col-span-1 lg:col-span-12 mb-xl border-b-2 border-primary pb-xl">
+<h1 class="font-display text-display font-black text-primary uppercase tracking-tighter max-w-4xl stamp">The Meter and the Clause</h1>
+<p class="font-metadata text-metadata text-on-surface-variant mt-sm">FILE REF: TX-02/11/2026 // SECTOR: UK HIGHER EDUCATION // STATUS: AGENT-COMPILED</p>
+<p class="inline-block font-metadata text-label-sm font-bold uppercase bg-secondary text-on-secondary px-md py-sm mt-md">BUILT BY AI AGENTS // HERMES AGENT BOTS + GEMINI NOTEBOOK</p>
+</div>
+<!-- Intelligence Metrics -->
+<div class="col-span-1 lg:col-span-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter mb-xl">
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="25" data-suffix=",000">25,000</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">Professionals aligned to OpenAI delivery in Cognizant's Frontier Capability Group</span></div>
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="6" data-suffix="">6</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">Areas of expectation set for AI suppliers in the Jisc sector statement</span></div>
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="202" data-suffix="">202</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">To 155: the Lords majority forcing a review of AISI pre-deployment audit powers</span></div>
+<div class="brutal-card p-md flex flex-col justify-between h-32 brutal-shadow reveal"><span class="font-display text-headline-lg font-black text-primary"><span class="num" data-target="87" data-suffix="%">87%</span></span><span class="font-metadata text-label-sm uppercase text-on-surface">Of employers expecting AI to reshape graduate and apprentice roles</span></div>
+</div>
+<!-- Content Area Left -->
+<div class="col-span-1 lg:col-span-8 flex flex-col gap-xl">
+<!-- Section 01 -->
+<section id="strategy" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-secondary text-on-secondary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI Strategy &amp; Governance</h3>
+<span class="font-metadata text-label-sm font-bold">01</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md bg-secondary-fixed border-l-4 border-secondary">
+<div class="font-metadata text-label-sm font-bold text-secondary uppercase mb-sm">★ Featured · United Kingdom</div><h4 class="font-display text-headline-md font-bold text-primary mb-sm">The sector writes its own schedule of requirements and hands it to suppliers</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Jisc's statement of 27 October sets six areas of expectation for providers of AI-enabled products: transparency at the point of signature, protection of value over the life of the agreement, visibility of usage metrics and charging mechanisms, continuity of a specific model version where teaching or research depends on it, controls over data and governance, and interoperability that allows a change of supplier. It asks that these become standard elements of procurement and negotiation, and it ships with a due diligence framework that tests individual products against them. Caren Milloy, Jisc's director of licensing, framed the purpose as keeping institutions in control of their costs, choices and risks as adoption scales. A shared negotiating text changes the position of a small institution. The six areas can be attached to every renewal as the institution's own schedule of requirements, and a supplier that will not answer them in writing has given you a decision you can defend to a board.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.jisc.ac.uk/news/all/education-and-research-sector-calls-for-governance-and-cost-control-for-AI" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: JISC ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">Peers force a review of pre-deployment audit whilst ministers take powers over agents</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">At report stage on 26 October, Amendment 163 carried by 202 to 155 and wrote into the Cyber Security and Resilience Bill a review of whether the AI Security Institute should have power to audit frontier systems ahead of deployment, with a deadline of a year after Royal Assent. An amendment placing an incident reporting duty on developers fell 95 to 165. Government Amendment 70 was agreed without a division and permits regulations to give the Secretary of State functions where a compromise of a regulated network is attributable to loss of oversight or control of an AI agent. The minister told peers that a regulatory role "would undermine its voluntary partnership with leading AI developers", and Viscount Colville noted that Anthropic's Claude Mythos 5.1 had been withdrawn from the institute the previous month. The Bill puts the reporting and containment burden on operators, which includes any institution running agents across estate, finance or admissions. The register of agent permissions and the incident log are becoming the evidence base for a statutory duty, and they cost a fraction of the alternative.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://hansard.parliament.uk/Lords/2026-10-26/debates/B413EFAE-E7D4-4742-986D-092884E0D8D1/CyberSecurityAndResilience(NetworkandInformationSystems)Bill" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: HANSARD ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">The regulator of personal data turns to agents and keeps accountability with the deployer</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The ICO's call for evidence on agentic AI runs until 20 November and covers data security, transparency, accountability, automated decision-making, fairness, purpose limitation and lawfulness, feeding the statutory code of practice required by the Data (Use and Access) Act 2025. It follows the foundation model report of 8 October, in which ten developers made or committed to changes and engagement with X.AI was paused pending an investigation into Grok. Richard Nevinson, director of technology regulation, said that an agent acting with autonomy "is not an excuse for poor compliance". Where an agent reads student records or writes to a supplier system, the controller analysis, the minimisation argument and the audit trail belong to the university. A data protection impact assessment written for a chatbot will not cover an agent that takes actions, and the difference is worth a template of its own.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/10/agentic-ai-call-for-evidence/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: ICO ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">Microsoft's chief executive names control, knowledge and trust as the constraints</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Speaking at the Microsoft Frontier Tour in London on 21 October, in an account published on 30 October, Satya Nadella set out three challenges for organisations adopting agentic AI: keeping humans in control of consequential actions, retaining ownership of organisational knowledge, and establishing trust in systems whose behaviour is becoming harder to predict. Governance sits above model capability in that framing. The vendor with the largest seat footprint in UK higher education has put institutional control ahead of model choice as the limiting factor. That gives a CTO grounds to spend the next budget round on instrumenting the estate rather than expanding it.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.technologyrecord.com/article/trust-and-governance-will-define-the-next-phase-of-enterprise-ai-says-microsoft" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: TECHNOLOGY RECORD ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">An investigation counts who was in the room when datacentre policy was written</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Spotlight on Corruption's review of AI growth zones, reported on 27 October, found that ministers and senior officials met 137 businesses to discuss datacentre policy, two community groups and no environmental organisations, and that 38 senior officials moved into AI companies between July 2024 and September 2026, nine of them from the department that shaped AI strategy. The findings rest on 40 freedom of information requests to 18 agencies. The planning record for the physical infrastructure that AI depends on is now obtainable by a local authority, a residents' group or a student union. Any institution hosting or partnering on datacentre capacity should expect the consultation record to be read back at it.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.theguardian.com/uk-news/2026/oct/27/uk-government-environmental-groups-ai-datacentres-expansion-plans-investigation" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: THE GUARDIAN ↗</a></article>
+</div>
+</section>
+<!-- Section 02 -->
+<section id="teaching" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-surface text-primary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI in Teaching &amp; Learning</h3>
+<span class="font-metadata text-label-sm font-bold">02</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md bg-secondary-fixed border-l-4 border-secondary">
+<div class="font-metadata text-label-sm font-bold text-secondary uppercase mb-sm">★ Featured · United Kingdom</div><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Cambridge's scrutiny body finds the central guidance contradictory and vague</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The Board of Scrutiny's assessment, published in the Cambridge University Reporter on 21 October, describes the university's central guidance on artificial intelligence as "sometimes contradictory and vague", and recommends annual AI inductions for students and staff along with the option of oral examinations where misuse is suspected. The formal position remains that unacknowledged AI content in a summative assessment is misconduct unless the brief permits it, whilst the permissible role of AI in unassessed learning stays undefined. The defect is structural. Policy written at the centre cannot resolve the question a tutor faces on a Tuesday, and module-level assessment categories published before enrolment do more work than another central statement.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.admin.cam.ac.uk/reporter/2026-27/weekly/6840/section4.shtml" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: CAMBRIDGE REPORTER ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">ai@cam funds six teaching experiments and puts assessment design at the centre</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The AI for Teaching and Learning initiative has selected projects in architecture, economics, genomic medicine, law, physics and psychology, each running six months on up to £10,000, with technical support from the AI Clinic. In the Algorithmic Trading Robot Design course, students build trading strategies and are assessed on how their robots behave in a simulated market under conditions they did not choose, with AI diagnostic feedback closing the loop. Neil Lawrence, who chairs ai@cam, said universities still have a great deal to learn about what AI means for the development of knowledge, expertise and independent judgement. The design pattern travels beyond Cambridge and beyond trading. Assess the behaviour of the artefact under unfamiliar conditions and the submission stops being a proxy for capability, which is the only durable answer to a student who can generate a polished output in ten minutes.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://ai.cam.ac.uk/news/six-cambridge-projects-to-explore-how-ai-is-changing-teaching-and-learning" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: AI@CAM ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">A four-tier assessment classification spreads through the sector</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Liverpool's guidance, in force since August 2026, places every assessment in one of four categories: AI prohibited, restricted, actively encouraged, or integral to the task. The tier is recorded per assessment in curriculum documentation, visible to a student before the brief arrives and auditable by a reviewer afterwards. A tier held in the curriculum record is the cheapest control available to an institution facing an OfS review or a student appeal, because it converts a judgement about intent into a record of a published rule.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://thetab.com/2026/10/16/is-this-the-downfall-of-turnitin-heres-what-you-need-to-know" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: THE TAB ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">QAA's draft standards principles stay open for sector comment</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The draft principles for assuring academic standards in the age of AI, published on 19 October, remain under consultation with a sector advisory group, and sit alongside QAA's finding that variance in practice runs through modules and tutors inside a single institution. The framework that matters will be the one published after consultation, and every reviewer will cite it. A response submitted now costs an afternoon and shapes the reference document for the next validation cycle.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.qaa.ac.uk/news-events/news/draft-principles-for-assuring-academic-standards-in-the-age-of-ai" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: QAA ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">The evidence base for teaching technology is being tested by the technology itself</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Writing in Times Higher Education on 29 October, Sandra Leaton Gray argues that producing better evidence about interventions has never been the same thing as overcoming educational disadvantage, and that AI is exposing the limits of a "what works" framing. The argument arrives as institutions buy tutoring, feedback and analytics on vendor claims rather than controlled trials. The evidence standard belongs in the procurement, with a comparison group, a defined measure and a published result. Without it the teaching estate fills with tools whose effect nobody can demonstrate and whose renewal nobody can refuse.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.timeshighereducation.com/opinion/ai-exposing-limits-educations-what-works-obsession" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: TIMES HIGHER EDUCATION ↗</a></article>
+</div>
+</section>
+<!-- Section 03 -->
+<section id="workforce" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-surface text-primary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI Workforce &amp; Skills</h3>
+<span class="font-metadata text-label-sm font-bold">03</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md bg-secondary-fixed border-l-4 border-secondary">
+<div class="font-metadata text-label-sm font-bold text-secondary uppercase mb-sm">★ Featured · United States</div><h4 class="font-display text-headline-md font-bold text-primary mb-sm">A services firm puts 25,000 people behind one laboratory's products</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Cognizant's Frontier Capability Group, announced on 30 October, aligns more than 25,000 professionals to delivering OpenAI products including Codex and ChatGPT, across AI-native software engineering, application modernisation and agentic customer operations. Its Application Modernizer covers the lifecycle from reverse-engineering mainframe code to generating cloud-native code, with engineers reviewing every consequential decision, and the firm is running the same methods through its own sales and service operations first. Oracle opened an equivalent services practice on 27 October covering use-case selection, agent development, evaluation, governance and cost optimisation. Forward deployed engineering now arrives as an industrial supply line with a headcount larger than most UK universities. The strategic question for an institution is whether to rent that capability by the engagement or to hold two or three engineers who know the registry, the admissions system and the studio, and who remain after the contract ends.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://news.cognizant.com/2026-10-30-Cognizant-commits-more-than-25%2C000-professionals-to-OpenAI-delivery-as-enterprises-move-frontier-AI-into-production" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: COGNIZANT ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">Employers expect AI to remake the first rung and have redesigned almost none of it</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">Writing for HEPI on 26 October, the argument rests on the Institute of Student Employers' Student Development Survey 2026: 87 per cent of employers expect AI to reshape graduate and apprentice roles, and 43 per cent say their entry-level roles have already evolved without formal redesign. ISE's recruitment data puts graduate hiring down 8 per cent year on year with 140 applications per vacancy. Three decisions are proposed: universities define graduate-level judgement within each discipline, employers weigh the developmental value of junior work before automating it, and government uses the Early Careers Jobs Alliance to build a graduate formation model for AI-exposed sectors. The apprenticeship function of junior work used to be free and implicit in an employment contract. Once it is automated, somebody has to pay for it deliberately, and a university is the only body with the assessment machinery to certify judgement.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://hepi.ac.uk/2026/10/26/ai-is-raising-the-first-rung-who-will-turn-graduates-into-professionals" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: HEPI ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">The digital jobs plan buys entry routes and leaves the AI content thin</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The Digital and Technologies Jobs Plan, published on 21 October, projects around 800,000 digital and technology roles to fill over the next decade and sets an ambition of roughly 200,000 entry-level opportunities including apprenticeships, at about 20,000 a year. TechFirst aims to reach a million young people with AI and technology learning by 2028, and partners including Microsoft, Cisco, IBM, Cognizant, Arm, Kainos, QinetiQ and AtkinsRéalis have committed more than 10,000 places. The plan also records that organisations hiring apprentices into AI roles rose from 3 per cent in 2020 to 19 per cent in 2025, that apprentices remain 3 per cent of the AI workforce and that 13 per cent of graduate schemes include AI training. The funding is aimed at volume routes into work. The gap it documents sits in graduate scheme design and in the AI content of degree programmes, which is where an institution's influence actually runs, and where a placement or degree apprenticeship partnership converts into recruitment.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.gov.uk/government/publications/digital-and-technologies-jobs-plan/digital-and-technologies-jobs-plan" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: DFE ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">Universities UK's roadmap names a trailblazer in every course</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The Future Jobs Roadmap commits the sector to meaningful work-based learning for all undergraduates by 2035 with a 50 per cent milestone by 2030, AI tools accessible to every undergraduate and, in every course, a lecturer designated as an AI trailblazer. It also asks for a universal lifetime entitlement to careers support and for employer co-designed modular provision. One named member of staff per course is specific and testable, which also means it fails visibly. The role needs hours, training and a promotion route in the same academic year it is announced.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://mmu.ac.uk/news-and-events/news/story/universities-and-employers-join-forces-tackle-entry-level-job-squeeze" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: UNIVERSITIES UK ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">Architects expect the profession to shrink faster than their own practices</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The RIBA AI Report 2026, drawn from more than 1,100 responses gathered in March and April, finds 59 per cent agreeing that AI adoption will lead to staff reductions across architecture against 30 per cent expecting reductions in their own organisation, with 9 per cent reporting cuts that have already happened. Sixty-one per cent agree that early-career professionals will find it harder to acquire essential skills, and 19 per cent of practices hold a documented AI policy. A school of architecture is being asked to defend the training route that practices believe they are closing. Placement design, live project work and an assessed audit of an agentic workflow become the substitute for the tasks that used to teach judgement, and they need to be timetabled rather than hoped for.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.riba.org/news/ai-adoption-reaches-tipping-point-across-uk-architecture/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: RIBA ↗</a></article>
+</div>
+</section>
+<!-- Section 04 -->
+<section id="policy" class="brutal-card p-0 reveal scroll-mt-24">
+<header class="border-b-2 border-primary p-md bg-surface text-primary flex justify-between items-center">
+<h3 class="font-display text-headline-md font-bold uppercase">AI Policy &amp; Operations</h3>
+<span class="font-metadata text-label-sm font-bold">04</span>
+</header>
+<div class="divide-y-2 divide-primary">
+<article class="p-md bg-secondary-fixed border-l-4 border-secondary">
+<div class="font-metadata text-label-sm font-bold text-secondary uppercase mb-sm">★ Featured · United States</div><h4 class="font-display text-headline-md font-bold text-primary mb-sm">Autodesk moves from the seat to the meter</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">AEC Magazine reported on 27 October that Autodesk began charging for its AEC Data Model API on 6 October, at one Flex token for every 5 MB of data exported beyond the included allowance. The same piece sets out the alternative now within reach of a practice: running its own model and orchestrator on hardware it controls, keeping the reasoning layer and corporate knowledge inside that boundary, and connecting agents to Revit, Rhino and Speckle through MCP. The unit of AI cost in a design workflow has become data movement. A faculty that models its budget on seat counts will undershoot, and one that keeps a per-project usage ledger can renegotiate from evidence when the renewal arrives.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://aecmag.com/ai/autodesk-beyond-the-seat-the-meter/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: AEC MAGAZINE ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">The agent-native BIM question moves from demonstration to procurement</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">AEC Magazine's September/October edition tests write access to Revit through Claude and MCP, profiles Motif as an agent-native BIM platform built against Revit's architecture, and examines tools that navigate building codes. Allplan's Max release on 28 October extends engineering AI across its portfolio. Write access to a live model is the moment an agent can alter a coordinated design without a person approving the change. Approval gates and a readable change log have to land in the same term as the capability, and the test-on-a-copy discipline belongs in the teaching brief.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://aecmag.com/magazines" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: AEC MAGAZINE ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">ServiceNow and OpenAI put agent actions behind the system of record</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">The expansion announced on 28 October places a ServiceNow plugin for ChatGPT in the OpenAI marketplace, so an agent can find related incidents, assess change risk and update records whilst ServiceNow's Action Fabric applies the customer's own permissions and business rules. Codex is planned for the AI Workflow Factory during 2027, a joint security product follows, and voice is expected in the first quarter of 2027. The pattern of the week is that agent authority is delegated to the system that already holds the rules. That is a cleaner architecture than standing access to everything the agent might touch, and it is the design to demand from any vendor pitching an agent for student records or finance.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://www.openai.com/index/openai-servicenow-partnership-expansion/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: OPENAI ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">GitHub ships agent governance as a product default</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">At releases on 28 and 29 October, GitHub made Copilot Fusion generally available with model routing, cascades and critique workflows at administrator-controlled effort levels, made Agentic Workflows generally available so Markdown descriptions compile into Actions YAML with read-only permissions by default, and put the maximum review-effort level of Copilot code review into public preview. Copilot can also be included with GitHub Enterprise for every licensed user, metered against the enterprise budget. IBM and HashiCorp made Agent Identity and Vault 2.2 generally available in the same week, recording who owns an agent and limiting what it can reach. Read-only by default, constrained model lists and named agent owners are the three controls a research group needs before it runs agents against a shared repository. Each is now configuration, which removes the excuse for leaving it to goodwill.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://github.blog/changelog/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: GITHUB ↗</a></article>
+<article class="p-md">
+<h4 class="font-display text-headline-md font-bold text-primary mb-sm">A cheaper frontier model moves the cost into verification</h4><p class="font-body-md text-body-md text-on-surface-variant mb-sm">GPT-6.1 Terra arrived on 26 October at $1 per million input tokens and $5 per million output, with computer use reported at parity with the top tier at roughly a tenth of the token price, a marked fall in error rates on adversarial prompts and 50.3 per cent on Terminal-Bench 4.0 at maximum effort. Liquid AI shipped six 2B-class LFM3 models on 27 October, and Moonshot's Kimi K3.1 Pro opened at $2 and $10 with weights promised by 4 November. When a competent agent costs a tenth of last quarter's price, deployment stops being the constraint and checking becomes the scarce resource. Budget should shift from inference towards evaluation harnesses, logging and the human review hours that make an agent's output defensible.</p><a class="font-metadata text-label-sm font-bold text-secondary hover:underline inline-flex items-center gap-xs" href="https://openai.com/index/introducing-gpt-6-1-terra/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">description</span>SOURCE: OPENAI ↗</a></article>
+</div>
+</section>
+</div>
+<!-- Content Area Right (Sidebar) -->
+<div class="col-span-1 lg:col-span-4 flex flex-col gap-gutter">
+<!-- Summary Box -->
+<aside id="actions" class="brutal-border bg-surface-bright brutal-shadow p-0 reveal scroll-mt-24">
+<div class="bg-[#0000FF] text-white p-md border-b-2 border-primary">
+<h4 class="font-display text-headline-md font-bold uppercase">Action Required</h4>
+</div>
+<div class="p-md font-body-md text-body-md">
+<p class="mb-md"><strong>What this means for your institution:</strong></p>
+<ul class="list-none space-y-sm font-metadata text-metadata">
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span><b class="text-primary">Attach the Jisc six areas to every AI renewal before signature.</b> Demand written answers on service entitlements, pricing structure, usage metrics, charging mechanics, model-version continuity and exit. A supplier that will not commit has given the board a finding, and one that will has given you a contract you can administer.</span></li>
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span><b class="text-primary">Build a usage ledger you can query without asking anyone.</b> Meter consumption by department, workflow and agent, then translate it into cost per enrolment, per assessment cycle and per studio project. Jisc's demand for visibility only helps an institution that already measures its own side of the meter.</span></li>
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span><b class="text-primary">Treat agent permissions as delegated authority with named holders.</b> For each agent that can write, record the owner, the systems it reaches, the actions requiring human approval and the log it writes to. Amendment 70 gives ministers powers over networks compromised through loss of control of an agent, and this register answers an inspector in an hour.</span></li>
+<li class="flex items-start gap-sm"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_right</span><span><b class="text-primary">Rebuild the first rung inside the curriculum.</b> Where a task used to train a junior, write an assessed substitute: a supervised brief under unfamiliar conditions, an audit of what the agent did and a defence of the decision. That artefact is what an employer paying for judgement will accept.</span></li>
+</ul>
+</div>
+</aside>
+<!-- Video Block -->
+<div id="video" class="brutal-border bg-surface-bright brutal-shadow p-0 flex flex-col reveal scroll-mt-24">
+<div class="border-b-2 border-primary p-sm font-metadata text-label-sm font-bold uppercase flex justify-between items-center bg-surface-variant">
+<span>Watch the briefing</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="aspect-video w-full bg-black relative border-b-2 border-primary">
+<video controls preload="none" class="w-full h-full object-contain" poster="media/infographic.png" src="media/video.mp4"></video>
+</div>
+<div class="p-sm font-metadata text-label-sm bg-surface-bright text-on-surface-variant">
+EXPLAINER OVERVIEW // 23 MB // GENERATED BY GEMINI NOTEBOOK
+</div>
+</div>
+<!-- Audio Block -->
+<div class="brutal-border bg-surface-bright brutal-shadow p-0 flex flex-col reveal scroll-mt-24">
+<div class="border-b-2 border-primary p-sm font-metadata text-label-sm font-bold uppercase flex justify-between items-center bg-surface-variant">
+<span>Listen: Audio Overview</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">headphones</span>
+</div>
+<div class="p-md">
+<audio controls preload="none" class="w-full" src="media/audio.m4a"></audio>
+</div>
+<div class="p-sm font-metadata text-label-sm bg-surface-bright text-on-surface-variant">
+AUDIO OVERVIEW // 23 MB // GENERATED BY GEMINI NOTEBOOK
+</div>
+</div>
+</div>
+<!-- Bottom Links -->
+<div class="col-span-1 lg:col-span-12 mt-xl border-t-2 border-primary pt-xl reveal">
+<h4 class="font-display text-headline-md font-bold uppercase mb-md text-primary">Worth Watching</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<a class="brutal-border p-md hover:bg-surface-variant transition-colors flex items-center justify-between group" href="https://www.officeforstudents.org.uk/" target="_blank" rel="noopener">
+<span class="font-metadata text-metadata font-bold uppercase">OfS report on AI and assessment integrity: due shortly</span>
+<span class="material-symbols-outlined text-primary transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+<a class="brutal-border p-md hover:bg-surface-variant transition-colors flex items-center justify-between group" href="https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/10/agentic-ai-call-for-evidence/" target="_blank" rel="noopener">
+<span class="font-metadata text-metadata font-bold uppercase">20 Nov 2026: ICO agentic AI call for evidence closes</span>
+<span class="material-symbols-outlined text-primary transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+<a class="brutal-border p-md hover:bg-surface-variant transition-colors flex items-center justify-between group" href="https://bills.parliament.uk/bills/4035/stages" target="_blank" rel="noopener">
+<span class="font-metadata text-metadata font-bold uppercase">Commons stage: Cyber Security and Resilience Bill</span>
+<span class="material-symbols-outlined text-primary transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mt-gutter">
+<div class="brutal-border p-md font-metadata text-metadata font-bold uppercase">Whether metered API pricing reaches the design tools and what it does to a software budget line</div>
+<div class="brutal-border p-md font-metadata text-metadata font-bold uppercase">Which institution publishes an agent register with named owners and delegated permissions</div>
+<div class="brutal-border p-md font-metadata text-metadata font-bold uppercase">Model-version continuity clauses at the January renewal round</div>
+<div class="brutal-border p-md font-metadata text-metadata font-bold uppercase">Whether the AISI review amendment survives the Commons</div>
+<div class="brutal-border p-md font-metadata text-metadata font-bold uppercase">The ICO code of practice timetable after 20 November</div>
+<div class="brutal-border p-md font-metadata text-metadata font-bold uppercase">How many courses can name an AI trailblazer by the end of the year</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="flex flex-col px-md py-lg w-full bg-surface border-t-2 border-primary mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="font-metadata text-label-sm font-bold">©2026 SIGNAL · BUILT BY AI AGENTS // HERMES BOTS + GEMINI NOTEBOOK</span>
+<div class="flex gap-lg font-metadata text-label-sm">
+<a class="text-on-surface-variant hover:text-primary hover:underline focus:ring-2 focus:ring-primary outline-none" href="#">PRIVACY.LOG</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline focus:ring-2 focus:ring-primary outline-none" href="#">TERMS.MD</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline focus:ring-2 focus:ring-primary outline-none" href="#">CONTACT.SH</a>
+</div>
+</div>
+<div class="font-metadata text-label-sm text-on-surface-variant border-t-2 border-primary mt-md pt-sm">
+PROVENANCE: TEXT, LAYOUT AND MULTIMODAL BRIEFING BUILT BY HERMES AGENT BOTS // NOTEBOOK "THE SIGNAL" · e995f8c6-6c64-446e-a485-4dbbe9d7c5cb · ISSUE 2026-11-02 · SOURCE 498c27c8 · ARTIFACT IDS 3a5ef55c / b3e5f558 / dc6ea69a</div>
+</footer>
+<script>
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function animateNum(el){const t=parseFloat(el.dataset.target);const s=el.dataset.suffix||'';const dur=1200;const st=performance.now();function tick(n){let p=Math.min((n-st)/dur,1);p=1-Math.pow(1-p,3);let v=Math.round(t*p);el.textContent=(v>=1000?v.toLocaleString('en-GB'):v)+s;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
+  const so=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateNum(e.target);so.unobserve(e.target);}});},{threshold:.5});
+  document.querySelectorAll('.num').forEach(n=>so.observe(n));
+
+  function toggleArchive(open) {
+    const drawer = document.getElementById('archive-drawer');
+    const backdrop = document.getElementById('archive-drawer-backdrop');
+    if (!drawer || !backdrop) return;
+    const isOpen = !drawer.classList.contains('translate-x-full');
+    const shouldOpen = open !== undefined ? open : !isOpen;
+    if (shouldOpen) {
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100');
+      drawer.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    } else {
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      drawer.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') toggleArchive(false);
+  });
+
+</script>
+
+<!-- Archive Flyout Drawer -->
+<div id="archive-drawer-backdrop" class="fixed inset-0 bg-primary/40 backdrop-blur-[2px] z-50 transition-opacity duration-200 opacity-0 pointer-events-none" onclick="toggleArchive(false)"></div>
+
+<aside id="archive-drawer" aria-label="Archive Drawer" class="fixed top-0 right-0 h-full w-full max-w-lg bg-surface border-l-4 border-primary z-50 flex flex-col transform translate-x-full transition-transform duration-200 ease-in-out shadow-[-8px_0px_0px_rgba(0,0,0,1)]">
+  <div class="p-md border-b-2 border-primary bg-primary text-on-primary flex justify-between items-center">
+    <div>
+      <div class="font-metadata text-[11px] uppercase tracking-wider text-secondary-fixed">INSTITUTIONAL REPOSITORY</div>
+      <h2 class="font-display text-headline-md font-black uppercase tracking-tight">DISPATCH ARCHIVE</h2>
+    </div>
+    <button onclick="toggleArchive(false)" class="p-1 border-2 border-on-primary hover:bg-on-primary hover:text-primary transition-colors text-on-primary font-metadata text-label-sm font-bold flex items-center gap-xs px-2 cursor-pointer" aria-label="Close Archive">
+      <span>ESC</span>
+      <span class="material-symbols-outlined text-[16px]">close</span>
+    </button>
+  </div>
+
+  <div class="px-md py-xs bg-surface-variant border-b-2 border-primary font-metadata text-[12px] flex justify-between items-center text-on-surface-variant">
+    <span>INDEX: 10 WEEKLY EDITIONS</span>
+    <span>STATUS: PRESERVED</span>
+  </div>
+
+  <div class="flex-1 overflow-y-auto p-md space-y-md">
+<article class="brutal-card p-md border-2 border-primary bg-secondary-fixed relative">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-secondary text-on-secondary px-1.5 py-0.5">CURRENT DISPATCH</span>
+<span class="font-metadata text-label-sm font-bold text-primary">02/11/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">The Meter and the Clause</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">Cognizant aligns 25,000 professionals to OpenAI delivery as Autodesk starts charging by the megabyte; peers force a review of AISI pre-deployment audit powers whilst ministers take powers over networks compromised by agent loss of control; Jisc sets six conditions for AI suppliers backed by Universities UK and GuildHE; 87 per cent of employers expect AI to remake graduate roles and 43 per cent say it has happened without redesign.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/30">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-02/11/2026</span>
+<span class="font-metadata text-label-sm font-bold text-secondary uppercase flex items-center gap-xs"><span>READING NOW</span><span class="material-symbols-outlined text-[16px]">arrow_downward</span></span>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 26/10/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">26/10/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Rented Capacity, Owned Risk</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">Government puts 200 million pounds of OpenAI and Anthropic model credits behind a national biosecurity lab whilst the Cyber Security Bill reaches report stage with no AI clauses; QAA finds assessment variance inside single institutions as 95 per cent of undergraduates use AI; McKinsey records 85 per cent of expanding jobs requiring credentials; and the RIBA finds 74 per cent practice adoption against 17 per cent claiming better designs.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-26/10/2026</span>
+<a href="archive/2026-10-26.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 19/10/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">19/10/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">999,000 Reasons to Fail</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">Jensen Huang tells London its institutions default to finding 999,000 reasons to fail as Nvidia pledges 250 million dollars of UK agentic safety compute; Anthropic withholds Claude Mythos over autonomous zero-day discovery while three regulators move to compulsory agent oversight in 48 hours; 45,398 survey responses show 88 per cent student AI adoption against a 57 per cent assessment guidance gap; and GPT-6 Astra builds BIM models in Blender, Rhino and Revit via MCP.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-19/10/2026</span>
+<a href="archive/2026-10-19.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 12/10/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">12/10/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Automation of Judgment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">A UK funder lets AI screen out half a grant round and suspends every offer; three universities leave Turnitin over AI data terms; expert verified AI study materials lift the weakest students while detection strategies collapse; prompt only AI skills demand falls 25 percent; and the UK safety institute admits its own agents acted on the live internet.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-12/10/2026</span>
+<a href="archive/2026-10-12.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 05/10/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">05/10/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Seven Signatures. 308 Words. No Enforcement</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">A 308 word accord with no auditor, deadline, publication or penalty, signed by seven parties; MI5 names a funder and writes to every vice chancellor; the Information Commission replaces the ICO with compulsory process; Jisc negotiates a sector wide OpenAI route; a randomised trial finds an AI tutor lowers grades; and one email hijacks an agent end to end.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-05/10/2026</span>
+<a href="archive/2026-10-05.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 28/09/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">28/09/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Principles Without Enforcement</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">The UK bids for global AI principles without a statute; US and China bilateral incident channel; AISI opens evaluation cards; QAA builds an assessment validity framework; OfS links complaints to governance breaches.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-28/09/2026</span>
+<a href="archive/2026-09-28.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 21/09/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">21/09/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Who Checks the Work</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">JCHR statutory AI Bill report; AISI pre release model access revelations; MIT cognitive offloading evidence; US Census graduate earnings decline.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-21/09/2026</span>
+<a href="archive/2026-09-21.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 14/09/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">14/09/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Fluency Without Competence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">The governance gap is now measurable. RIBA 74 percent architecture practice adoption, UUK Future Jobs Roadmap, EU AI Act transparency duties.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-14/09/2026</span>
+<a href="archive/2026-09-14.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 07/09/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">07/09/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">Universal Access Arrives. Governance Must Catch Up.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">Universal student access rollouts, assessment redesign versus integrity policing, faculty enablement dividend, automated decision safeguards under DUAA.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-07/09/2026</span>
+<a href="archive/2026-09-07.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+<article class="brutal-card p-md border-2 border-primary bg-surface-bright brutal-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-metadata text-[11px] font-bold uppercase tracking-wider bg-surface-variant text-primary border border-primary px-1.5 py-0.5">ISSUE 01/09/2026</span>
+<span class="font-metadata text-label-sm text-on-surface-variant">01/09/2026</span>
+</div>
+<h3 class="font-display text-headline-md font-bold text-primary mb-xs">From Adoption to Governance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm text-sm">Adoption is total, provision is not. UK pro innovation regulator routing, Data (Use and Access) Act ADM framework, DEC survey adoption metrics.</p>
+<div class="flex items-center justify-between pt-xs border-t border-primary/20">
+<span class="font-metadata text-[11px] text-on-surface-variant">REF: TX-01/09/2026</span>
+<a href="archive/2026-09-01.html" class="font-metadata text-label-sm font-bold text-primary hover:text-secondary inline-flex items-center gap-xs uppercase underline"><span>OPEN DISPATCH</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</article>
+  </div>
+
+  <div class="p-md border-t-2 border-primary bg-surface-variant flex flex-col gap-sm">
+    <a href="archive/index.html" class="w-full py-sm px-md brutal-border brutal-shadow-hover bg-surface-bright font-metadata text-metadata font-bold uppercase text-primary text-center hover:bg-primary hover:text-on-primary transition-colors">
+      BROWSE FULL ARCHIVE DIRECTORY →
+    </a>
+    <a href="https://github.com/tigerwang21/the-signal-archive" target="_blank" rel="noopener" class="font-metadata text-label-sm text-secondary hover:underline flex items-center justify-center gap-xs">
+      <span>RAW MARKDOWN REPO (GITHUB)</span>
+      <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+    </a>
+  </div>
+</aside>
+
+</body></html>
